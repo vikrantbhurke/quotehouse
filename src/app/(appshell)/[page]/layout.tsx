@@ -45,8 +45,8 @@ export default async function Layout({ children, params }: LayoutProps) {
         <Box className={footer} h={60} style={{ border: "1px solid blue" }}>
           <Group
             px="md"
-            justify="space-between"
             h="100%"
+            justify="space-between"
             style={{ border: "1px solid green" }}>
             <ThemeIcon>
               <IconTriangleFilled size={30} />
