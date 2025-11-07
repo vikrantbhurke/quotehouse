@@ -9,6 +9,7 @@ import { ButtonPrevious } from "./button-previous";
 import { getRandomColor } from "./get-random-color";
 import { outfit } from "@/global/styles/fonts";
 import { opacity } from "@/app/tailwind";
+import classes from "@/app/common.module.css";
 
 const outer = "flex flex-col items-center";
 const inner = `w-full min-h-screen max-w-3xl`;
@@ -43,7 +44,7 @@ export function ColorPicker({ children, totalElements }: any) {
 
             <Text
               fw={700}
-              className={`${outfit.className} antialiased ${opacity}`}>
+              className={`${outfit.className} antialiased ${opacity} ${classes.textShadow}`}>
               {page} / {totalElements}
             </Text>
 

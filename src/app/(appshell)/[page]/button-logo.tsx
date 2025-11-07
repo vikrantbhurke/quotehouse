@@ -20,14 +20,14 @@ export function ButtonLogo() {
       <Title
         order={4}
         hiddenFrom="sm"
-        className={`${outfit.className} antialiased`}>
+        className={`${outfit.className} antialiased ${classes.textShadow}`}>
         Quotehouse
       </Title>
 
       <Title
         order={3}
         visibleFrom="sm"
-        className={`${outfit.className} antialiased`}>
+        className={`${outfit.className} antialiased ${classes.textShadow}`}>
         Quotehouse
       </Title>
     </Group>
