@@ -5,7 +5,7 @@ import { IconMenu4 } from "@tabler/icons-react";
 export function ButtonMenu({ color }: any) {
   return (
     <Group>
-      <Space w={5} />
+      <Space w={50} />
 
       <ActionIcon
         variant="white"

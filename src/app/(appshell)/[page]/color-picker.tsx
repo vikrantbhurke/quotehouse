@@ -7,6 +7,7 @@ import { ButtonShuffle } from "./button-shuffle";
 import { Box, Group, Text } from "@mantine/core";
 import { ButtonPrevious } from "./button-previous";
 import { getRandomColor } from "./get-random-color";
+import { outfit } from "@/global/styles/fonts";
 
 const outer = "flex flex-col items-center";
 const inner = `w-full min-h-screen max-w-3xl`;
@@ -41,7 +42,7 @@ export function ColorPicker({ children, totalElements }: any) {
 
             <Text
               fw={700}
-              className="opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              className={`${outfit.className} antialiased opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out`}>
               {page} / 56789
             </Text>
 

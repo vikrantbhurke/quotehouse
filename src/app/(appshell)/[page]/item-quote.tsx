@@ -1,3 +1,4 @@
+import { outfit } from "@/global/styles/fonts";
 import { Space, Stack, Text } from "@mantine/core";
 
 export function ItemQuote({ quote }: any) {
@@ -6,19 +7,43 @@ export function ItemQuote({ quote }: any) {
       <Space h={60} />
 
       <Stack gap="xl">
-        <Text fz={20} ta="center" hiddenFrom="sm">
+        <Text
+          c="white"
+          fz={20}
+          fw={600}
+          ta="center"
+          hiddenFrom="sm"
+          className={`${outfit.className} antialiased`}>
           {quote.content}
         </Text>
 
-        <Text fz={20} ta="center" hiddenFrom="sm">
+        <Text
+          c="white"
+          fz={20}
+          fw={600}
+          ta="center"
+          hiddenFrom="sm"
+          className={`${outfit.className} antialiased`}>
           {quote.author}
         </Text>
 
-        <Text fz={30} ta="center" visibleFrom="sm">
+        <Text
+          c="white"
+          fz={30}
+          fw={600}
+          ta="center"
+          visibleFrom="sm"
+          className={`${outfit.className} antialiased`}>
           {quote.content}
         </Text>
 
-        <Text fz={30} ta="center" visibleFrom="sm">
+        <Text
+          c="white"
+          fz={30}
+          fw={600}
+          ta="center"
+          visibleFrom="sm"
+          className={`${outfit.className} antialiased`}>
           {quote.author}
         </Text>
       </Stack>
