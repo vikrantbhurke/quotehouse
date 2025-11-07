@@ -1,12 +1,13 @@
+import { readQuote } from "@/features/quote/actions";
 import { ItemQuote } from "./item-quote";
 
-const quote = {
-  content: `Always trade money for time and knowledge. Because money can be lost
-            and gained. But time once lost cannot be gained. And knowledge once
-            gained cannot be lost.`,
-  author: `Vikrant Bhurke`,
+type PageProps = {
+  params: Promise<{ [key: string]: string }>;
 };
 
-export default async function Page() {
-  return <ItemQuote quote={quote} />;
+export default async function Page({ params }: PageProps) {
+  const { page } = await params;
+  const quotesPage = await readQuote({ page: Number(page) - 1 });
+
+  return <ItemQuote quote={quotesPage.content[0]} />;
 }

@@ -6,11 +6,11 @@ export function ItemQuote({ quote }: any) {
       <Space h={60} />
 
       <Stack gap="xl">
-        <Text fz={24} ta="center" hiddenFrom="sm">
+        <Text fz={20} ta="center" hiddenFrom="sm">
           {quote.content}
         </Text>
 
-        <Text fz={24} ta="center" hiddenFrom="sm">
+        <Text fz={20} ta="center" hiddenFrom="sm">
           {quote.author}
         </Text>
 

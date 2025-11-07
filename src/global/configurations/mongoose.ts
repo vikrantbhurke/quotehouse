@@ -1,6 +1,7 @@
 "use server";
 import mongoose from "mongoose";
 import { idAliasPlugin } from "@/global/database";
+import { Quote } from "@/features/quote/model";
 
 mongoose.plugin(idAliasPlugin);
 
@@ -18,7 +19,7 @@ export const connectMongoose = async () => {
   }
 
   connection = await mongoose.connect(uri);
-
+  [Quote];
   console.log("✅ Mongoose connected");
   return connection;
 };

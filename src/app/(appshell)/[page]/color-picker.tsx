@@ -14,19 +14,17 @@ const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
 const header = `w-full max-w-[768px] fixed top-0 z-100] backdrop-blur-[10px] bg-[rgba(var(--bg-one),0.5)]`;
 
-export function ColorPicker({ children }: any) {
-  const { increment, decrement, page } = useNavigate();
+export function ColorPicker({ children, totalElements }: any) {
+  const { increment, decrement, page } = useNavigate(totalElements);
   const [currentColor, setCurrentColor] = useState(getRandomColor());
 
   const handleNext = () => {
     increment();
-    console.log("Next fired");
     setCurrentColor(getRandomColor(currentColor.hex));
   };
 
   const handlePrevious = () => {
     decrement();
-    console.log("Previous fired");
     setCurrentColor(getRandomColor(currentColor.hex));
   };
 

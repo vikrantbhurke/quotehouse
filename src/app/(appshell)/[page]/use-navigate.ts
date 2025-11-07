@@ -1,14 +1,13 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 
-export function useNavigate() {
+export function useNavigate(totalElements: number) {
   const router = useRouter();
   const pathname = usePathname();
 
   const segments = pathname.split("/");
   const last = segments[segments.length - 1];
   const page = Number(last);
-  console.log(router, pathname, page);
 
   const getHref = (page: number) => {
     segments[segments.length - 1] = page.toString();
@@ -16,8 +15,8 @@ export function useNavigate() {
     router.push(newPath);
   };
 
-  const increment = () => getHref(page + 1);
-  const decrement = () => getHref(page - 1);
+  const increment = () => getHref(page < totalElements ? page + 1 : page);
+  const decrement = () => getHref(page > 1 ? page - 1 : 1);
 
   return { increment, decrement, page };
 }
