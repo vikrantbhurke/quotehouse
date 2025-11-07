@@ -25,14 +25,6 @@ export function ButtonInstallApp() {
         </ActionIcon>
       ) : (
         <Space w={34} />
-        // <ActionIcon
-        //   size="lg"
-        //   radius="xl"
-        //   variant="transparent"
-        //   className={clsx(classes.boxShadow, opacity)}
-        //   >
-        //   <IconDownload size={20} color={color} stroke={3} />
-        // </ActionIcon>
       )}
     </>
   );
