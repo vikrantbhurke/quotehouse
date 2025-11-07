@@ -12,7 +12,13 @@ export function ButtonLogo() {
         <IconCircleFilled size={40} color="white" />
       </ThemeIcon>
 
-      <Title order={3}>Quotehouse</Title>
+      <Title order={4} hiddenFrom="sm">
+        Quotehouse
+      </Title>
+
+      <Title order={3} visibleFrom="sm">
+        Quotehouse
+      </Title>
     </Group>
   );
 }
