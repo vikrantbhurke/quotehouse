@@ -1,16 +1,13 @@
 "use client";
-import { Group, ThemeIcon, Title } from "@mantine/core";
-import { IconCircleFilled } from "@tabler/icons-react";
+import { ActionIcon, Group, Title } from "@mantine/core";
 
 export function ButtonLogo() {
   return (
     <Group
       gap={8}
       onClick={() => console.log("/1")}
-      className="hover:opacity-75 transition-opacity duration-300 ease-in-out">
-      <ThemeIcon size={40} variant="transparent">
-        <IconCircleFilled size={40} color="white" />
-      </ThemeIcon>
+      className="opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+      <ActionIcon variant="white" size="lg" radius="xl" onClick={() => {}} />
 
       <Title order={4} hiddenFrom="sm">
         Quotehouse

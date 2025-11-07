@@ -1,18 +1,20 @@
 "use client";
-import { ActionIcon, Space } from "@mantine/core";
-import { IconSquareFilled } from "@tabler/icons-react";
+import { ActionIcon, Group, Space } from "@mantine/core";
+import { IconMenu4 } from "@tabler/icons-react";
 
-export function ButtonMenu() {
+export function ButtonMenu({ color }: any) {
   return (
-    <>
+    <Group>
       <Space w={5} />
 
       <ActionIcon
-        variant="transparent"
-        size={40}
-        className="hover:opacity-75 transition-opacity duration-300 ease-in-out">
-        <IconSquareFilled size={40} color="white" />
+        variant="white"
+        size="lg"
+        radius="xl"
+        onClick={() => {}}
+        className="opacity-40 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <IconMenu4 size={20} color={color} stroke={3} />
       </ActionIcon>
-    </>
+    </Group>
   );
 }

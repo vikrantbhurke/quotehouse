@@ -18,5 +18,16 @@ export function useNavigate(totalElements: number) {
   const increment = () => getHref(page < totalElements ? page + 1 : page);
   const decrement = () => getHref(page > 1 ? page - 1 : 1);
 
-  return { increment, decrement, page };
+  const shuffle = () => {
+    if (totalElements <= 1) return page;
+
+    let newPage: number;
+    do {
+      newPage = Math.floor(Math.random() * totalElements) + 1;
+    } while (newPage === page);
+
+    getHref(newPage);
+  };
+
+  return { increment, decrement, shuffle, page };
 }

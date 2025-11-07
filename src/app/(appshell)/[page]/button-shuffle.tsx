@@ -1,16 +1,16 @@
 "use client";
 import { ActionIcon } from "@mantine/core";
-import { IconArrowUp } from "@tabler/icons-react";
+import { IconArrowsShuffle } from "@tabler/icons-react";
 
-export function ButtonPrevious({ handlePrevious, color }: any) {
+export function ButtonShuffle({ handleShuffle, color }: any) {
   return (
     <ActionIcon
       variant="white"
       size="lg"
       radius="xl"
-      onClick={handlePrevious}
+      onClick={handleShuffle}
       className="opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out">
-      <IconArrowUp size={20} color={color} stroke={3} />
+      <IconArrowsShuffle size={20} color={color} stroke={3} />
     </ActionIcon>
   );
 }

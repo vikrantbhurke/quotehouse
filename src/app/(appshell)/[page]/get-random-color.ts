@@ -6,5 +6,5 @@ export function getRandomColor(excludeHex?: string) {
     : colors;
 
   const randomIndex = Math.floor(Math.random() * filtered.length);
-  return filtered[randomIndex];
+  return filtered[randomIndex].hex;
 }
