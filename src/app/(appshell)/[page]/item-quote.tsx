@@ -1,5 +1,6 @@
 import { outfit } from "@/global/styles/fonts";
 import { Space, Stack, Text } from "@mantine/core";
+import classes from "@/app/common.module.css";
 
 export function ItemQuote({ quote }: any) {
   return (
@@ -13,7 +14,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
-          className={`${outfit.className} antialiased`}>
+          className={`${outfit.className} antialiased ${classes.textShadow}`}>
           {quote.content}
         </Text>
 
@@ -23,7 +24,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
-          className={`${outfit.className} antialiased`}>
+          className={`${outfit.className} antialiased ${classes.textShadow}`}>
           {quote.author}
         </Text>
 
@@ -33,7 +34,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          className={`${outfit.className} antialiased`}>
+          className={`${outfit.className} antialiased ${classes.textShadow}`}>
           {quote.content}
         </Text>
 
@@ -43,7 +44,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          className={`${outfit.className} antialiased`}>
+          className={`${outfit.className} antialiased ${classes.textShadow}`}>
           {quote.author}
         </Text>
       </Stack>

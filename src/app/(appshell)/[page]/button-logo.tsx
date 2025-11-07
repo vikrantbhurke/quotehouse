@@ -1,20 +1,33 @@
 "use client";
 import { outfit } from "@/global/styles/fonts";
-import { ActionIcon, Group, Title } from "@mantine/core";
+import { Group, ThemeIcon, Title } from "@mantine/core";
+import { opacity } from "@/app/tailwind";
+import classes from "@/app/common.module.css";
+import { useRouter } from "next/navigation";
 
 export function ButtonLogo() {
-  return (
-    <Group
-      gap={8}
-      onClick={() => console.log("/1")}
-      className={`${outfit.className} antialiased opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out`}>
-      <ActionIcon variant="white" size="lg" radius="xl" onClick={() => {}} />
+  const router = useRouter();
 
-      <Title order={4} hiddenFrom="sm">
+  return (
+    <Group gap={8} onClick={() => router.push("/1")} className={opacity}>
+      <ThemeIcon
+        variant="white"
+        size="lg"
+        radius="xl"
+        className={classes.boxShadow}
+      />
+
+      <Title
+        order={4}
+        hiddenFrom="sm"
+        className={`${outfit.className} antialiased`}>
         Quotehouse
       </Title>
 
-      <Title order={3} visibleFrom="sm">
+      <Title
+        order={3}
+        visibleFrom="sm"
+        className={`${outfit.className} antialiased`}>
         Quotehouse
       </Title>
     </Group>
