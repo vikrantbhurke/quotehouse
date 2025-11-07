@@ -1,6 +1,7 @@
 import { colors } from "./colors";
 
 export function getRandomColor(excludeHex?: string) {
+  return excludeHex;
   const filtered = excludeHex
     ? colors.filter((c) => c.hex !== excludeHex)
     : colors;

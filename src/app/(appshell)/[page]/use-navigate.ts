@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 
-export function useNavigate(totalElements: number) {
+export function useNavigate(total: number) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -15,15 +15,19 @@ export function useNavigate(totalElements: number) {
     router.push(newPath);
   };
 
-  const increment = () => getHref(page < totalElements ? page + 1 : page);
-  const decrement = () => getHref(page > 1 ? page - 1 : 1);
+  const increment = () => {
+    getHref(page < total ? page + 1 : page);
+  };
+  const decrement = () => {
+    getHref(page > 1 ? page - 1 : 1);
+  };
 
   const shuffle = () => {
-    if (totalElements <= 1) return page;
+    if (total <= 1) return page;
 
     let newPage: number;
     do {
-      newPage = Math.floor(Math.random() * totalElements) + 1;
+      newPage = Math.floor(Math.random() * total) + 1;
     } while (newPage === page);
 
     getHref(newPage);

@@ -1,71 +1,49 @@
-"use client";
 import { ButtonNext } from "./button-next";
 import { ButtonLogo } from "./button-logo";
 import { ButtonMenu } from "./button-menu";
-import { useNavigate } from "./use-navigate";
 import { ButtonShuffle } from "./button-shuffle";
 import { Box, Group, Text } from "@mantine/core";
 import { ButtonPrevious } from "./button-previous";
-import { getRandomColor } from "./get-random-color";
 import { outfit } from "@/global/styles/fonts";
 import { opacity } from "@/app/tailwind";
 import classes from "@/app/common.module.css";
+import { ButtonInstallApp } from "./button-install-app";
 
-const outer = "flex flex-col items-center";
 const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
 const header = `w-full max-w-[768px] fixed top-0 z-100] backdrop-blur-[10px] bg-[rgba(var(--bg-one),0.5)]`;
 
-export function ColorPicker({ children, totalElements }: any) {
-  const { increment, decrement, shuffle, page } = useNavigate(totalElements);
-  const currentColor = getRandomColor();
-
-  const handleNext = () => {
-    increment();
-    getRandomColor();
-  };
-
-  const handlePrevious = () => {
-    decrement();
-    getRandomColor();
-  };
-
-  const handleShuffle = () => {
-    shuffle();
-    getRandomColor();
-  };
-
+export function ColorPicker({ children, page, total }: any) {
   return (
-    <Box className={outer} style={{ backgroundColor: currentColor }}>
-      <Box className={inner}>
-        <Box className={header} h={60}>
-          <Group px="md" h="100%" justify="space-between">
-            <ButtonLogo />
+    <Box className={inner}>
+      <Box className={header} h={60}>
+        <Group px="md" h="100%" justify="space-between">
+          <ButtonLogo />
 
-            <Text
-              fw={700}
-              className={`${outfit.className} antialiased ${opacity} ${classes.textShadow}`}>
-              {page} / {totalElements}
-            </Text>
+          <Text
+            fw={700}
+            className={`${outfit.className} antialiased ${opacity} ${classes.textShadow}`}>
+            {page} / {total}
+          </Text>
 
-            <ButtonMenu color={currentColor} />
+          <ButtonInstallApp />
+        </Group>
+      </Box>
+
+      {children}
+
+      <Box className={footer} h={60}>
+        <Group px="md" h="100%" justify="space-between">
+          <ButtonPrevious total={total} />
+
+          <Group>
+            <ButtonShuffle total={total} />
+
+            <ButtonMenu />
           </Group>
-        </Box>
 
-        {children}
-
-        <Box className={footer} h={60}>
-          <Group px="md" h="100%" justify="space-between">
-            <ButtonPrevious
-              handlePrevious={handlePrevious}
-              color={currentColor}
-            />
-
-            <ButtonShuffle handleShuffle={handleShuffle} color={currentColor} />
-
-            <ButtonNext handleNext={handleNext} color={currentColor} />
-          </Group>
-        </Box>
+          <ButtonNext total={total} />
+        </Group>
       </Box>
     </Box>
   );

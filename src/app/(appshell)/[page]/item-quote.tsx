@@ -34,7 +34,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          className={`${outfit.className} antialiased ${classes.textShadow}`}>
+          className={`${outfit.className} antialiased ${classes.textShadow} selection:bg-[#f4a8ff]`}>
           {quote.content}
         </Text>
 

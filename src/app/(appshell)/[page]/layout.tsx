@@ -1,5 +1,6 @@
 import { readQuote } from "@/features/quote/actions";
 import { ColorPicker } from "./color-picker";
+import { OuterShell } from "./outer-shell";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -11,8 +12,10 @@ export default async function Layout({ children, params }: LayoutProps) {
   const quotesPage = await readQuote({ page: Number(page) - 1 });
 
   return (
-    <ColorPicker totalElements={quotesPage.totalElements}>
-      {children}
-    </ColorPicker>
+    <OuterShell>
+      <ColorPicker page={page} total={quotesPage.totalElements}>
+        {children}
+      </ColorPicker>
+    </OuterShell>
   );
 }

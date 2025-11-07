@@ -5,7 +5,7 @@ export const colors = [
   },
   {
     color: "orange",
-    hex: "#ff6900",
+    hex: "#ff8904",
   },
   {
     color: "amber",
@@ -13,31 +13,31 @@ export const colors = [
   },
   {
     color: "yellow",
-    hex: "#f0b100",
+    hex: "#fdc700",
   },
   {
     color: "lime",
-    hex: "#7ccf00",
+    hex: "#9ae600",
   },
   {
     color: "green",
-    hex: "#00c950",
+    hex: "#05df72",
   },
   {
     color: "emerald",
-    hex: "#00bc7d",
+    hex: "#00d492",
   },
   {
     color: "teal",
-    hex: "#00bba7",
+    hex: "#00d5be",
   },
   {
     color: "cyan",
-    hex: "#00b8db",
+    hex: "#00d3f2",
   },
   {
     color: "sky",
-    hex: "#00a6f4",
+    hex: "#00bcff",
   },
   {
     color: "blue",
@@ -57,11 +57,11 @@ export const colors = [
   },
   {
     color: "fuchsia",
-    hex: "#e12afb",
+    hex: "#ed6aff",
   },
   {
     color: "pink",
-    hex: "#f6339a",
+    hex: "#fb64b6",
   },
   {
     color: "rose",
