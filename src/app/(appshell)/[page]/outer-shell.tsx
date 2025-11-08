@@ -11,12 +11,12 @@ import clsx from "clsx";
 export function OuterShell({ children }: any) {
   const dispatch = useDispatch();
   const { color } = useSelector((state: RootState) => state.global);
-  const colorLight = lighten(color, 0.12);
+  const colorLight = lighten(color, 0.2);
 
   const outer = "flex flex-col items-center";
 
   const gradient =
-    "bg-[linear-gradient(to_bottom,var(--color)_0%,var(--color-light)_25%,var(--color-light)_75%,var(--color)_100%)]";
+    "bg-[linear-gradient(to_bottom,var(--color)_0%,var(--color-light)_33%,var(--color-light)_67%,var(--color)_100%)]";
 
   const variables = {
     "--color": color,

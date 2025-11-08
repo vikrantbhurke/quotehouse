@@ -1,10 +1,20 @@
-import { outfit } from "@/global/styles/fonts";
-import { Space, Stack, Text } from "@mantine/core";
-import classes from "@/app/common.module.css";
+"use client";
 import clsx from "clsx";
+import { outfit } from "@/global/styles/fonts";
+import { lighten, Space, Stack, Text } from "@mantine/core";
+import classes from "@/app/common.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/global/states/store";
 
 export function ItemQuote({ quote }: any) {
-  const text = clsx(outfit.className, "antialiased", classes.textShadow);
+  const { color } = useSelector((state: RootState) => state.global);
+
+  const text = clsx(
+    outfit.className,
+    "antialiased",
+    classes.textShadow,
+    "selection:bg-[var(--selection-bg)]"
+  );
 
   return (
     <Stack p="xl" h="100vh" justify="space-between" align="center">
@@ -37,6 +47,9 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
+          style={{
+            "--selection-bg": lighten(color, 0.5),
+          }}
           className={text}>
           {quote.content}
         </Text>

@@ -6,12 +6,13 @@ import { Box, Group, Space } from "@mantine/core";
 import { ButtonPrevious } from "./button-previous";
 import { ButtonZen } from "./button-zen";
 import { PageCounter } from "./page-counter";
+import { ButtonCopy } from "./button-copy";
 
 const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
 const header = `w-full max-w-[768px] fixed top-0 z-100] backdrop-blur-[10px] bg-[rgba(var(--bg-one),0.5)]`;
 
-export function InnerShell({ children, page, total }: any) {
+export function InnerShell({ children, quote, page, total }: any) {
   return (
     <Box className={inner}>
       <Box className={header} h={60}>
@@ -37,7 +38,7 @@ export function InnerShell({ children, page, total }: any) {
           <Group>
             <ButtonShuffle total={total} />
             <ButtonZen />
-            <ButtonShuffle total={total} />
+            <ButtonCopy jsonQuote={JSON.stringify(quote)} />
           </Group>
 
           <ButtonNext total={total} />

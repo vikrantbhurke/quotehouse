@@ -13,31 +13,31 @@ export const colors = [
   },
   {
     color: "yellow",
-    hex: "#fdc700", // 400
+    hex: "#f0b100", // 500
   },
   {
     color: "lime",
-    hex: "#9ae600", // 400
+    hex: "#7ccf00", // 500
   },
   {
     color: "green",
-    hex: "#05df72", // 400
+    hex: "#00c950", // 500
   },
   {
     color: "emerald",
-    hex: "#00d492", // 400
+    hex: "#00bc7d", // 500
   },
   {
     color: "teal",
-    hex: "#00d5be", // 400
+    hex: "#00bba7", // 500
   },
   {
     color: "cyan",
-    hex: "#00d3f2", // 400
+    hex: "#00b8db", // 500
   },
   {
     color: "sky",
-    hex: "#00bcff", // 400
+    hex: "#00a6f4", // 500
   },
   {
     color: "blue",

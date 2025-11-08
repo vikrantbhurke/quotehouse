@@ -13,7 +13,10 @@ export default async function Layout({ children, params }: LayoutProps) {
 
   return (
     <OuterShell>
-      <InnerShell page={page} total={quotesPage.totalElements}>
+      <InnerShell
+        page={page}
+        quote={quotesPage.content[0]}
+        total={quotesPage.totalElements}>
         {children}
       </InnerShell>
     </OuterShell>
