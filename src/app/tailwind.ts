@@ -1,2 +1,2 @@
 export const opacity =
-  "opacity-50 hover:opacity-100 focus:opacity-100 active:opacity-100 transition-opacity duration-300 ease-in-out";
+  "opacity-100 hover:opacity-80 focus:opacity-80 active:opacity-80 transition-opacity duration-300 ease-in-out";

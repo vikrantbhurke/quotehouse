@@ -1,5 +1,5 @@
 import { readQuote } from "@/features/quote/actions";
-import { ColorPicker } from "./color-picker";
+import { InnerShell } from "./inner-shell";
 import { OuterShell } from "./outer-shell";
 
 type LayoutProps = {
@@ -13,9 +13,9 @@ export default async function Layout({ children, params }: LayoutProps) {
 
   return (
     <OuterShell>
-      <ColorPicker page={page} total={quotesPage.totalElements}>
+      <InnerShell page={page} total={quotesPage.totalElements}>
         {children}
-      </ColorPicker>
+      </InnerShell>
     </OuterShell>
   );
 }

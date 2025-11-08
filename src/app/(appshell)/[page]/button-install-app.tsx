@@ -24,7 +24,7 @@ export function ButtonInstallApp() {
           <IconDownload size={20} color={color} stroke={3} />
         </ActionIcon>
       ) : (
-        <Space w={34} />
+        <Space w={200} />
       )}
     </>
   );
