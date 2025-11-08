@@ -24,7 +24,7 @@ export function ButtonInfo() {
     <Box className={getZen(isZen)}>
       <Tooltip
         label={
-          <Stack gap={0} className={title}>
+          <Stack gap={0} p="md" className={title}>
             <Title order={6} c="#999" fw={700}>
               You can go to next or previous page by
             </Title>
