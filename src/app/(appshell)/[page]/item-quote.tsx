@@ -6,7 +6,8 @@ import classes from "@/app/common.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/global/states/store";
 
-export function ItemQuote({ quote }: any) {
+export function ItemQuote({ jsonQuote }: any) {
+  const quote = JSON.parse(jsonQuote);
   const { color } = useSelector((state: RootState) => state.global);
 
   const text = clsx(

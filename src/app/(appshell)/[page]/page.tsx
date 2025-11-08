@@ -9,5 +9,5 @@ export default async function Page({ params }: PageProps) {
   const { page } = await params;
   const quotesPage = await readQuote({ page: Number(page) - 1 });
 
-  return <ItemQuote quote={quotesPage.content[0]} />;
+  return <ItemQuote jsonQuote={JSON.stringify(quotesPage.content[0])} />;
 }
