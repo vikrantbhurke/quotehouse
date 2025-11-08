@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from "react";
 export function useNavigate(total: number) {
   const router = useRouter();
   const pathname = usePathname();
-  const touchStartY = useRef<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const segments = pathname.split("/");
   const last = segments[segments.length - 1];
@@ -47,20 +47,20 @@ export function useNavigate(total: number) {
     }
 
     function handleTouchStart(e: TouchEvent) {
-      touchStartY.current = e.touches[0].clientY;
+      touchStartX.current = e.touches[0].clientX;
     }
 
     function handleTouchEnd(e: TouchEvent) {
-      if (touchStartY.current === null) return;
-      const touchEndY = e.changedTouches[0].clientY;
-      const diff = touchStartY.current - touchEndY;
+      if (touchStartX.current === null) return;
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX.current - touchEndX;
 
       if (Math.abs(diff) > 50) {
-        if (diff > 0) increment(); // swipe up → next
-        else decrement(); // swipe down → prev
+        if (diff > 0) increment();
+        else decrement();
       }
 
-      touchStartY.current = null;
+      touchStartX.current = null;
     }
 
     window.addEventListener("keydown", handleKeyDown);
