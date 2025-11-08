@@ -1,8 +1,8 @@
 "use client";
 import clsx from "clsx";
-import { opacity } from "@/app/tailwind";
+import { getZen, opacity } from "@/app/tailwind";
 import classes from "@/app/common.module.css";
-import { ActionIcon } from "@mantine/core";
+import { ActionIcon, Box } from "@mantine/core";
 import { IconArrowsShuffle } from "@tabler/icons-react";
 import { useNavigate } from "./use-navigate";
 import { useSelector } from "react-redux";
@@ -11,7 +11,7 @@ import { getRandomColor } from "./get-random-color";
 
 export function ButtonShuffle({ total }: any) {
   const { shuffle } = useNavigate(total);
-  const { color } = useSelector((state: RootState) => state.global);
+  const { color, isZen } = useSelector((state: RootState) => state.global);
 
   const handleShuffle = () => {
     shuffle();
@@ -19,13 +19,15 @@ export function ButtonShuffle({ total }: any) {
   };
 
   return (
-    <ActionIcon
-      variant="white"
-      size="lg"
-      radius="xl"
-      onClick={handleShuffle}
-      className={clsx(classes.boxShadow, opacity)}>
-      <IconArrowsShuffle size={20} color={color} stroke={3} />
-    </ActionIcon>
+    <Box className={getZen(isZen)}>
+      <ActionIcon
+        variant="white"
+        size="lg"
+        radius="xl"
+        onClick={handleShuffle}
+        className={clsx(classes.boxShadow, opacity)}>
+        <IconArrowsShuffle size={20} color={color} stroke={3} />
+      </ActionIcon>
+    </Box>
   );
 }

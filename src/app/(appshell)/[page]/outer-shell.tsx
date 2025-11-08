@@ -11,11 +11,17 @@ import clsx from "clsx";
 export function OuterShell({ children }: any) {
   const dispatch = useDispatch();
   const { color } = useSelector((state: RootState) => state.global);
-
   const colorLight = lighten(color, 0.12);
+
   const outer = "flex flex-col items-center";
+
   const gradient =
     "bg-[linear-gradient(to_bottom,var(--color)_0%,var(--color-light)_25%,var(--color-light)_75%,var(--color)_100%)]";
+
+  const variables = {
+    "--color": color,
+    "--color-light": colorLight,
+  };
 
   useEffect(() => {
     getRandomColor();
@@ -23,12 +29,7 @@ export function OuterShell({ children }: any) {
   }, [dispatch]);
 
   return (
-    <Box
-      className={clsx(outer, gradient)}
-      style={{
-        "--color": color,
-        "--color-light": colorLight,
-      }}>
+    <Box className={clsx(outer, gradient)} style={variables}>
       {children}
     </Box>
   );

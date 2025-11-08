@@ -2,11 +2,10 @@ import { ButtonNext } from "./button-next";
 import { ButtonLogo } from "./button-logo";
 import { ButtonMenu } from "./button-menu";
 import { ButtonShuffle } from "./button-shuffle";
-import { Box, Group, Space, Text } from "@mantine/core";
+import { Box, Group, Space } from "@mantine/core";
 import { ButtonPrevious } from "./button-previous";
-import { outfit } from "@/global/styles/fonts";
-import { opacity } from "@/app/tailwind";
-import classes from "@/app/common.module.css";
+import { ButtonZen } from "./button-zen";
+import { PageCounter } from "./page-counter";
 
 const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
@@ -19,11 +18,7 @@ export function InnerShell({ children, page, total }: any) {
         <Group px="md" h="100%" justify="space-between">
           <ButtonLogo />
 
-          <Text
-            fw={700}
-            className={`${outfit.className} antialiased ${opacity} ${classes.textShadow}`}>
-            {page} / {total}
-          </Text>
+          <PageCounter page={page} total={total} />
 
           <Group w={100} justify="flex-end">
             <Space />
@@ -40,6 +35,8 @@ export function InnerShell({ children, page, total }: any) {
           <ButtonPrevious total={total} />
 
           <Group>
+            <ButtonShuffle total={total} />
+            <ButtonZen />
             <ButtonShuffle total={total} />
           </Group>
 

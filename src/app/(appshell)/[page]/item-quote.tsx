@@ -1,8 +1,11 @@
 import { outfit } from "@/global/styles/fonts";
 import { Space, Stack, Text } from "@mantine/core";
 import classes from "@/app/common.module.css";
+import clsx from "clsx";
 
 export function ItemQuote({ quote }: any) {
+  const text = clsx(outfit.className, "antialiased", classes.textShadow);
+
   return (
     <Stack p="xl" h="100vh" justify="space-between" align="center">
       <Space h={60} />
@@ -14,7 +17,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
-          className={`${outfit.className} antialiased ${classes.textShadow}`}>
+          className={text}>
           {quote.content}
         </Text>
 
@@ -24,7 +27,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
-          className={`${outfit.className} antialiased ${classes.textShadow}`}>
+          className={text}>
           {quote.author}
         </Text>
 
@@ -34,7 +37,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          className={`${outfit.className} antialiased ${classes.textShadow} selection:bg-[#f4a8ff]`}>
+          className={text}>
           {quote.content}
         </Text>
 
@@ -44,7 +47,7 @@ export function ItemQuote({ quote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          className={`${outfit.className} antialiased ${classes.textShadow}`}>
+          className={text}>
           {quote.author}
         </Text>
       </Stack>
