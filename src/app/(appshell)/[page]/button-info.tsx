@@ -1,19 +1,12 @@
 "use client";
 import clsx from "clsx";
-import { getZen, opacity } from "@/app/tailwind";
 import { useSelector } from "react-redux";
 import classes from "@/app/common.module.css";
-import {
-  ActionIcon,
-  Box,
-  Stack,
-  ThemeIcon,
-  Title,
-  Tooltip,
-} from "@mantine/core";
+import { outfit } from "@/global/styles/fonts";
+import { getZen, opacity } from "@/app/tailwind";
 import { RootState } from "@/global/states/store";
 import { IconInfoCircle } from "@tabler/icons-react";
-import { outfit } from "@/global/styles/fonts";
+import { Box, Popover, Stack, ThemeIcon, Title } from "@mantine/core";
 
 export function ButtonInfo() {
   const { color, isZen } = useSelector((state: RootState) => state.global);
@@ -22,9 +15,19 @@ export function ButtonInfo() {
 
   return (
     <Box className={getZen(isZen)}>
-      <Tooltip
-        label={
-          <Stack gap={0} p="md" className={title}>
+      <Popover width={200} position="bottom" shadow="md">
+        <Popover.Target>
+          <ThemeIcon
+            variant="white"
+            size="lg"
+            radius="xl"
+            className={clsx(classes.boxShadow, opacity)}>
+            <IconInfoCircle size={20} color={color} stroke={3} />
+          </ThemeIcon>
+        </Popover.Target>
+
+        <Popover.Dropdown bg="white" bd="none" miw={400}>
+          <Stack gap={0} className={title}>
             <Title order={6} c="#999" fw={700}>
               You can go to next or previous page by
             </Title>
@@ -48,16 +51,9 @@ export function ButtonInfo() {
             <Title order={6} c="#999" fw={700}>
               5. Typing page number in url in browser search bar.
             </Title>
-          </Stack>
-        }>
-        <ThemeIcon
-          variant="white"
-          size="lg"
-          radius="xl"
-          className={clsx(classes.boxShadow, opacity)}>
-          <IconInfoCircle size={20} color={color} stroke={3} />
-        </ThemeIcon>
-      </Tooltip>
+          </Stack>{" "}
+        </Popover.Dropdown>
+      </Popover>
     </Box>
   );
 }
