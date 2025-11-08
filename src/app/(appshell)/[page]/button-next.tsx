@@ -1,7 +1,7 @@
 "use client";
 import clsx from "clsx";
 import { ActionIcon, Box } from "@mantine/core";
-import { IconArrowDown } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import classes from "@/app/common.module.css";
 import { getZen, opacity } from "@/app/tailwind";
 import { useNavigate } from "./use-navigate";
@@ -26,7 +26,7 @@ export function ButtonNext({ total }: any) {
         radius="xl"
         onClick={handleNext}
         className={clsx(classes.boxShadow, opacity)}>
-        <IconArrowDown size={20} color={color} stroke={3} />
+        <IconArrowRight size={20} color={color} stroke={3} />
       </ActionIcon>
     </Box>
   );

@@ -42,8 +42,8 @@ export function useNavigate(total: number) {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "ArrowDown") increment();
-      else if (e.key === "ArrowUp") decrement();
+      if (e.key === "ArrowRight") increment();
+      else if (e.key === "ArrowLeft") decrement();
     }
 
     function handleTouchStart(e: TouchEvent) {

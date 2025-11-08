@@ -7,6 +7,7 @@ import { ButtonPrevious } from "./button-previous";
 import { ButtonZen } from "./button-zen";
 import { PageCounter } from "./page-counter";
 import { ButtonCopy } from "./button-copy";
+import { ButtonInfo } from "./button-info";
 
 const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
@@ -39,6 +40,7 @@ export function InnerShell({ children, quote, page, total }: any) {
             <ButtonShuffle total={total} />
             <ButtonZen />
             <ButtonCopy jsonQuote={JSON.stringify(quote)} />
+            <ButtonInfo />
           </Group>
 
           <ButtonNext total={total} />
