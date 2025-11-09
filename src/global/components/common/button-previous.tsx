@@ -7,13 +7,17 @@ import { RootState } from "@/global/states/store";
 import { IconArrowLeft } from "@tabler/icons-react";
 import classes from "@/global/styles/common.module.css";
 import { useNavigate } from "@/global/hooks/use-navigate";
+import { useDispatch } from "react-redux";
+import { setColor } from "@/global/states/global-slice";
 
 export function ButtonPrevious({ total }: any) {
   const { decrement } = useNavigate(total);
   const { color, isZen } = useSelector((state: RootState) => state.global);
+  const dispatch = useDispatch();
 
   const handlePrevious = () => {
     decrement();
+    dispatch(setColor());
   };
 
   return (

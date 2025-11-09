@@ -16,11 +16,8 @@ export const globalSlice = createSlice({
   name: "global",
   initialState,
   reducers: {
-    setColor: (state, action: PayloadAction<string>) => {
-      const filtered = action.payload
-        ? colors.filter((color: string) => color !== action.payload)
-        : colors;
-
+    setColor: (state) => {
+      const filtered = colors.filter((color: string) => color !== state.color);
       const randomIndex = Math.floor(Math.random() * filtered.length);
       state.color = filtered[randomIndex];
     },

@@ -1,9 +1,9 @@
 "use client";
 import clsx from "clsx";
-import { useInstallApp } from "@/global/hooks";
-import { IconDownload } from "@tabler/icons-react";
 import { Button } from "@mantine/core";
 import { outfit } from "@/global/styles/fonts";
+import { useInstallApp } from "@/global/hooks";
+import { IconDownload } from "@tabler/icons-react";
 
 const text = clsx(outfit.className, "antialiased");
 

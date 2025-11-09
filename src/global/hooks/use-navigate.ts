@@ -1,11 +1,14 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { setColor } from "../states/global-slice";
 
 export function useNavigate(total: number) {
   const router = useRouter();
   const pathname = usePathname();
   const touchStartX = useRef<number | null>(null);
+  const dispatch = useDispatch();
 
   const segments = pathname.split("/");
   const last = segments[segments.length - 1];
@@ -42,6 +45,7 @@ export function useNavigate(total: number) {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      dispatch(setColor());
       if (e.key === "ArrowRight") increment();
       else if (e.key === "ArrowLeft") decrement();
     }
@@ -51,6 +55,7 @@ export function useNavigate(total: number) {
     }
 
     function handleTouchEnd(e: TouchEvent) {
+      dispatch(setColor());
       if (touchStartX.current === null) return;
       const touchEndX = e.changedTouches[0].clientX;
       const diff = touchStartX.current - touchEndX;
@@ -72,7 +77,7 @@ export function useNavigate(total: number) {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [increment, decrement]);
+  }, [dispatch, increment, decrement]);
 
   return { increment, decrement, shuffle, page };
 }

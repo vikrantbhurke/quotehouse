@@ -7,13 +7,17 @@ import { RootState } from "@/global/states/store";
 import { IconArrowRight } from "@tabler/icons-react";
 import classes from "@/global/styles/common.module.css";
 import { useNavigate } from "@/global/hooks/use-navigate";
+import { useDispatch } from "react-redux";
+import { setColor } from "@/global/states/global-slice";
 
 export function ButtonNext({ total }: any) {
   const { increment } = useNavigate(total);
   const { color, isZen } = useSelector((state: RootState) => state.global);
+  const dispatch = useDispatch();
 
   const handleNext = () => {
     increment();
+    dispatch(setColor());
   };
 
   return (

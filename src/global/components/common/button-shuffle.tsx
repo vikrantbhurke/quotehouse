@@ -7,13 +7,17 @@ import { RootState } from "@/global/states/store";
 import classes from "@/global/styles/common.module.css";
 import { IconArrowsShuffle } from "@tabler/icons-react";
 import { useNavigate } from "@/global/hooks/use-navigate";
+import { useDispatch } from "react-redux";
+import { setColor } from "@/global/states/global-slice";
 
 export function ButtonShuffle({ total }: any) {
   const { shuffle } = useNavigate(total);
   const { color, isZen } = useSelector((state: RootState) => state.global);
+  const dispatch = useDispatch();
 
   const handleShuffle = () => {
     shuffle();
+    dispatch(setColor());
   };
 
   return (
