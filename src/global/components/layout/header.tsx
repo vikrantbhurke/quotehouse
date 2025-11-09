@@ -35,6 +35,7 @@ export function Header() {
         <ButtonInstallApp />
         <Title
           order={4}
+          fw={500}
           c="#333"
           className={clsx(button)}
           onClick={handleClick}>
