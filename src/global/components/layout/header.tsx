@@ -5,7 +5,7 @@ import { ButtonInstallApp } from "../common";
 import { outfit } from "@/global/styles/fonts";
 import { useWindowScroll } from "@mantine/hooks";
 import { viewQuoteRoute } from "@/global/constants";
-import { Button, Group, ThemeIcon } from "@mantine/core";
+import { Button, Group, ThemeIcon, Title } from "@mantine/core";
 
 const group = `bg-white w-full max-w-3xl fixed top-0 z-100 border-b-[3px]`;
 
@@ -31,7 +31,16 @@ export function Header() {
         </Button>
       </Group>
 
-      <ButtonInstallApp />
+      <Group>
+        <ButtonInstallApp />
+        <Title
+          order={4}
+          c="#333"
+          className={clsx(button)}
+          onClick={handleClick}>
+          Home
+        </Title>
+      </Group>
     </Group>
   );
 }
