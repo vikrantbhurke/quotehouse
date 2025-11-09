@@ -15,7 +15,7 @@ export function Providers({ children }: ProvidersProps) {
     <Provider store={store}>
       <MantineProvider
         theme={theme}
-        defaultColorScheme="dark"
+        defaultColorScheme="light"
         cssVariablesResolver={resolveCssVariables}>
         <Notifications />
         {children}

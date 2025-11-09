@@ -1,12 +1,11 @@
 "use client";
 import clsx from "clsx";
 import { opacity } from "@/app/tailwind";
-import classes from "@/app/common.module.css";
 import { ActionIcon } from "@mantine/core";
-import { IconPointFilled } from "@tabler/icons-react";
-import { useSelector } from "react-redux";
 import { RootState } from "@/global/states/store";
-import { useDispatch } from "react-redux";
+import { IconPointFilled } from "@tabler/icons-react";
+import { useDispatch, useSelector } from "react-redux";
+import classes from "@/global/styles/common.module.css";
 import { setIsZen } from "@/global/states/global-slice";
 
 export function ButtonZen() {

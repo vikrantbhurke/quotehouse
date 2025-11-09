@@ -1,6 +1,5 @@
 import { readQuote } from "@/features/quote/actions";
-import { InnerShell } from "./inner-shell";
-import { OuterShell } from "./outer-shell";
+import { InnerShell, OuterShell } from "@/global/components/layout";
 
 type LayoutProps = {
   children: React.ReactNode;

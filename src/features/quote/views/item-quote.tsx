@@ -1,10 +1,10 @@
 "use client";
 import clsx from "clsx";
-import { outfit } from "@/global/styles/fonts";
-import { lighten, Space, Stack, Text } from "@mantine/core";
-import classes from "@/app/common.module.css";
 import { useSelector } from "react-redux";
+import { outfit } from "@/global/styles/fonts";
 import { RootState } from "@/global/states/store";
+import classes from "@/global/styles/common.module.css";
+import { lighten, Space, Stack, Text } from "@mantine/core";
 
 export function ItemQuote({ jsonQuote }: any) {
   const quote = JSON.parse(jsonQuote);

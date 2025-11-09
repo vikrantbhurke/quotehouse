@@ -2,10 +2,10 @@
 import clsx from "clsx";
 import { Box, Text } from "@mantine/core";
 import { useSelector } from "react-redux";
-import classes from "@/app/common.module.css";
+import { outfit } from "@/global/styles/fonts";
 import { getZen, opacity } from "@/app/tailwind";
 import { RootState } from "@/global/states/store";
-import { outfit } from "@/global/styles/fonts";
+import classes from "@/global/styles/common.module.css";
 
 export function PageCounter({ page, total }: any) {
   const { isZen } = useSelector((state: RootState) => state.global);
@@ -20,7 +20,7 @@ export function PageCounter({ page, total }: any) {
 
   return (
     <Box className={getZen(isZen)}>
-      <Text fw={700} className={text}>
+      <Text c="white" fw={700} className={text}>
         {page} / {total}
       </Text>
     </Box>

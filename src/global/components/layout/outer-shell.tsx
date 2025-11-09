@@ -1,15 +1,10 @@
 "use client";
-import { Box, lighten } from "@mantine/core";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { setColor } from "@/global/states/global-slice";
-import { getRandomColor } from "./get-random-color";
-import { useSelector } from "react-redux";
-import { RootState } from "@/global/states/store";
 import clsx from "clsx";
+import { useSelector } from "react-redux";
+import { Box, lighten } from "@mantine/core";
+import { RootState } from "@/global/states/store";
 
 export function OuterShell({ children }: any) {
-  const dispatch = useDispatch();
   const { color } = useSelector((state: RootState) => state.global);
   const colorLight = lighten(color, 0.2);
 
@@ -22,11 +17,6 @@ export function OuterShell({ children }: any) {
     "--color": color,
     "--color-light": colorLight,
   };
-
-  useEffect(() => {
-    getRandomColor();
-    dispatch(setColor(getRandomColor() || ""));
-  }, [dispatch]);
 
   return (
     <Box className={clsx(outer, gradient)} style={variables}>

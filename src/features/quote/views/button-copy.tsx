@@ -1,12 +1,12 @@
 "use client";
 import clsx from "clsx";
-import { getZen, opacity } from "@/app/tailwind";
 import { useSelector } from "react-redux";
 import { useClipboard } from "@mantine/hooks";
-import classes from "@/app/common.module.css";
-import { ActionIcon, Box } from "@mantine/core";
-import { RootState } from "@/global/states/store";
 import { IconCopy } from "@tabler/icons-react";
+import { ActionIcon, Box } from "@mantine/core";
+import { getZen, opacity } from "@/app/tailwind";
+import { RootState } from "@/global/states/store";
+import classes from "@/global/styles/common.module.css";
 
 export function ButtonCopy({ jsonQuote }: any) {
   const quote = JSON.parse(jsonQuote);

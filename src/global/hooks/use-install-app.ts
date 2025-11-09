@@ -1,44 +1,41 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { RootState } from "../states/store";
-import { setIsInstalled } from "../states/global-slice";
+import { useEffect, useState } from "react";
 
 export const useInstallApp = () => {
-  const dispatch = useDispatch();
+  const [installPrompt, setInstallPrompt] = useState<any>(null);
+  const [isInstalled, setIsInstalled] = useState<any>(false);
 
-  const { isInstalled } = useSelector((state: RootState) => state.global);
-
-  const installPromptRef = useRef<any>(null);
-
+  // Listen for the 'beforeinstallprompt' event to store the event.
   useEffect(() => {
     const handler = (event: any) => {
-      event.preventDefault();
-      installPromptRef.current = event;
+      event.preventDefault(); // Prevent the default prompt.
+      setInstallPrompt(event); // Store the event for later use.
     };
 
     window.addEventListener("beforeinstallprompt", handler);
+
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
+  // Detect if the app is already installed.
   useEffect(() => {
-    const handleInstalled = () => dispatch(setIsInstalled(true));
+    const handleInstalled = () => setIsInstalled(true);
     window.addEventListener("appinstalled", handleInstalled);
-    return () => window.removeEventListener("appinstalled", handleInstalled);
-  }, [dispatch]);
 
+    return () => window.removeEventListener("appinstalled", handleInstalled);
+  }, []);
+
+  // Button click handler to show the install prompt.
   const handleInstallClick = async () => {
-    const promptEvent = installPromptRef.current;
-    if (promptEvent) {
-      promptEvent.prompt();
-      const { outcome } = await promptEvent.userChoice;
+    if (installPrompt) {
+      installPrompt.prompt(); // Show the install prompt.
+      const { outcome } = await installPrompt.userChoice;
       if (outcome === "accepted") {
         console.log("✅ User accepted the install prompt");
-        installPromptRef.current = null;
+        setInstallPrompt(null); // Clear prompt after use.
       }
     }
   };
 
-  return { isInstalled, handleInstallClick };
+  return { installPrompt, isInstalled, handleInstallClick };
 };

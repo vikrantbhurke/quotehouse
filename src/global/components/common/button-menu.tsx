@@ -1,12 +1,14 @@
 "use client";
 import clsx from "clsx";
-import { Box, Menu, ThemeIcon, Title } from "@mantine/core";
-import { IconMenu4 } from "@tabler/icons-react";
+import Link from "next/link";
+import { useSelector } from "react-redux";
 import { outfit } from "@/global/styles/fonts";
-import classes from "@/app/common.module.css";
+import { IconMenu4 } from "@tabler/icons-react";
+import { aboutRoute } from "@/global/constants";
 import { getZen, opacity } from "@/app/tailwind";
 import { RootState } from "@/global/states/store";
-import { useSelector } from "react-redux";
+import classes from "@/global/styles/common.module.css";
+import { Box, Menu, ThemeIcon, Title } from "@mantine/core";
 
 export function ButtonMenu() {
   const { color, isZen } = useSelector((state: RootState) => state.global);
@@ -27,7 +29,7 @@ export function ButtonMenu() {
         </Menu.Target>
 
         <Menu.Dropdown bg="white" bd="none">
-          <Menu.Item>
+          <Menu.Item component={Link} href={aboutRoute}>
             <Title order={4} c="#bbb" fw={800} ta="center" className={title}>
               About
             </Title>

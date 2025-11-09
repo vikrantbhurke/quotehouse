@@ -1,5 +1,5 @@
 import { readQuote } from "@/features/quote/actions";
-import { ItemQuote } from "./item-quote";
+import { ItemQuote } from "@/features/quote/views";
 
 type PageProps = {
   params: Promise<{ [key: string]: string }>;

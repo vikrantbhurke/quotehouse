@@ -1,13 +1,12 @@
 "use client";
 import clsx from "clsx";
-import { ActionIcon, Box } from "@mantine/core";
-import { IconArrowLeft } from "@tabler/icons-react";
-import { getZen, opacity } from "@/app/tailwind";
-import classes from "@/app/common.module.css";
-import { useNavigate } from "./use-navigate";
 import { useSelector } from "react-redux";
+import { ActionIcon, Box } from "@mantine/core";
+import { getZen, opacity } from "@/app/tailwind";
 import { RootState } from "@/global/states/store";
-import { getRandomColor } from "./get-random-color";
+import { IconArrowLeft } from "@tabler/icons-react";
+import classes from "@/global/styles/common.module.css";
+import { useNavigate } from "@/global/hooks/use-navigate";
 
 export function ButtonPrevious({ total }: any) {
   const { decrement } = useNavigate(total);
@@ -15,7 +14,6 @@ export function ButtonPrevious({ total }: any) {
 
   const handlePrevious = () => {
     decrement();
-    getRandomColor(color);
   };
 
   return (

@@ -1,11 +1,11 @@
 "use client";
 import clsx from "clsx";
-import { getZen, opacity } from "@/app/tailwind";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import classes from "@/app/common.module.css";
 import { outfit } from "@/global/styles/fonts";
+import { getZen, opacity } from "@/app/tailwind";
 import { RootState } from "@/global/states/store";
+import classes from "@/global/styles/common.module.css";
 import { Group, ThemeIcon, Title } from "@mantine/core";
 
 export function ButtonLogo() {
@@ -27,11 +27,11 @@ export function ButtonLogo() {
     <Group gap={8} onClick={handleClick} className={opacity}>
       <ThemeIcon variant="white" size="lg" radius="xl" className={icon} />
 
-      <Title order={4} hiddenFrom="sm" className={title}>
+      <Title c="white" order={4} hiddenFrom="sm" className={title}>
         Quotehouse
       </Title>
 
-      <Title order={3} visibleFrom="sm" className={title}>
+      <Title c="white" order={3} visibleFrom="sm" className={title}>
         Quotehouse
       </Title>
     </Group>
