@@ -2,7 +2,6 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setColor } from "../states/global-slice";
 
 export function useNavigate(total: number) {
   const router = useRouter();
@@ -45,7 +44,6 @@ export function useNavigate(total: number) {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      dispatch(setColor());
       if (e.key === "ArrowRight") increment();
       else if (e.key === "ArrowLeft") decrement();
     }
@@ -55,7 +53,6 @@ export function useNavigate(total: number) {
     }
 
     function handleTouchEnd(e: TouchEvent) {
-      dispatch(setColor());
       if (touchStartX.current === null) return;
       const touchEndX = e.changedTouches[0].clientX;
       const diff = touchStartX.current - touchEndX;

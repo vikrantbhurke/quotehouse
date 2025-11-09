@@ -1,24 +1,17 @@
 "use client";
-import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { ActionIcon, Box } from "@mantine/core";
-import { getZen, opacity } from "@/app/tailwind";
+import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 import { IconArrowLeft } from "@tabler/icons-react";
-import classes from "@/global/styles/common.module.css";
 import { useNavigate } from "@/global/hooks/use-navigate";
-import { useDispatch } from "react-redux";
-import { setColor } from "@/global/states/global-slice";
+import { boxShadow } from "@/global/styles/styles";
 
-export function ButtonPrevious({ total }: any) {
+export function ButtonPrevious({ total, color }: any) {
   const { decrement } = useNavigate(total);
-  const { color, isZen } = useSelector((state: RootState) => state.global);
-  const dispatch = useDispatch();
+  const { isZen } = useSelector((state: RootState) => state.global);
 
-  const handlePrevious = () => {
-    decrement();
-    dispatch(setColor());
-  };
+  const handlePrevious = () => decrement();
 
   return (
     <Box className={getZen(isZen)}>
@@ -27,8 +20,8 @@ export function ButtonPrevious({ total }: any) {
         size="lg"
         radius="xl"
         onClick={handlePrevious}
-        className={clsx(classes.boxShadow, opacity)}>
-        <IconArrowLeft size={20} color={color} stroke={3} />
+        style={boxShadow(color)}>
+        <IconArrowLeft size={16} color={color} stroke={3} />
       </ActionIcon>
     </Box>
   );

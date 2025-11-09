@@ -1,21 +1,19 @@
 "use client";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
 import { outfit } from "@/global/styles/fonts";
-import { RootState } from "@/global/states/store";
-import classes from "@/global/styles/common.module.css";
 import { lighten, Space, Stack, Text } from "@mantine/core";
+import { textShadow } from "@/global/styles/styles";
 
-export function ItemQuote({ jsonQuote }: any) {
+export function ItemQuote({ jsonQuote, color }: any) {
   const quote = JSON.parse(jsonQuote);
-  const { color } = useSelector((state: RootState) => state.global);
 
   const text = clsx(
     outfit.className,
     "antialiased",
-    classes.textShadow,
     "selection:bg-[var(--selection-bg)]"
   );
+
+  const style = { ...textShadow(color), "--selection-bg": lighten(color, 0.5) };
 
   return (
     <Stack p="xl" h="100vh" justify="space-between" align="center">
@@ -28,6 +26,7 @@ export function ItemQuote({ jsonQuote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
+          style={style}
           className={text}>
           {quote.content}
         </Text>
@@ -38,6 +37,7 @@ export function ItemQuote({ jsonQuote }: any) {
           fw={600}
           ta="center"
           hiddenFrom="sm"
+          style={style}
           className={text}>
           {quote.author}
         </Text>
@@ -48,9 +48,7 @@ export function ItemQuote({ jsonQuote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          style={{
-            "--selection-bg": lighten(color, 0.5),
-          }}
+          style={textShadow(color)}
           className={text}>
           {quote.content}
         </Text>
@@ -61,6 +59,7 @@ export function ItemQuote({ jsonQuote }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
+          style={style}
           className={text}>
           {quote.author}
         </Text>

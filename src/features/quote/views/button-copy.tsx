@@ -1,17 +1,16 @@
 "use client";
-import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { useClipboard } from "@mantine/hooks";
 import { IconCopy } from "@tabler/icons-react";
 import { ActionIcon, Box } from "@mantine/core";
-import { getZen, opacity } from "@/app/tailwind";
+import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
-import classes from "@/global/styles/common.module.css";
+import { boxShadow } from "@/global/styles/styles";
 
-export function ButtonCopy({ jsonQuote }: any) {
+export function ButtonCopy({ jsonQuote, color }: any) {
   const quote = JSON.parse(jsonQuote);
   const clipboard = useClipboard({ timeout: 500 });
-  const { color, isZen } = useSelector((state: RootState) => state.global);
+  const { isZen } = useSelector((state: RootState) => state.global);
 
   const handleClick = () =>
     clipboard.copy(`${quote.content} - ${quote.author}`);
@@ -23,9 +22,9 @@ export function ButtonCopy({ jsonQuote }: any) {
         size="lg"
         radius="xl"
         onClick={handleClick}
-        color={clipboard.copied ? "teal" : "blue"}
-        className={clsx(classes.boxShadow, opacity)}>
-        <IconCopy size={20} color={color} stroke={3} />
+        style={boxShadow(color)}
+        color={clipboard.copied ? "teal" : "blue"}>
+        <IconCopy size={16} color={color} stroke={3} />
       </ActionIcon>
     </Box>
   );

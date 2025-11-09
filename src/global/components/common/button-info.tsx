@@ -2,16 +2,16 @@
 import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { outfit } from "@/global/styles/fonts";
-import { getZen, opacity } from "@/app/tailwind";
+import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 import { IconInfoCircle } from "@tabler/icons-react";
-import classes from "@/global/styles/common.module.css";
 import { Box, Popover, Stack, ThemeIcon, Title } from "@mantine/core";
+import { boxShadow } from "@/global/styles/styles";
 
-export function ButtonInfo() {
-  const { color, isZen } = useSelector((state: RootState) => state.global);
+const title = clsx(outfit.className, "antialiased");
 
-  const title = clsx(outfit.className, "antialiased");
+export function ButtonInfo({ color }: any) {
+  const { isZen } = useSelector((state: RootState) => state.global);
 
   return (
     <Box className={getZen(isZen)}>
@@ -21,8 +21,8 @@ export function ButtonInfo() {
             variant="white"
             size="lg"
             radius="xl"
-            className={clsx(classes.boxShadow, opacity)}>
-            <IconInfoCircle size={20} color={color} stroke={3} />
+            style={boxShadow(color)}>
+            <IconInfoCircle size={16} color={color} stroke={3} />
           </ThemeIcon>
         </Popover.Target>
 

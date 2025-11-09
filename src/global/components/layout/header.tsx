@@ -1,13 +1,21 @@
 "use client";
-import { Group, ThemeIcon } from "@mantine/core";
-import { ButtonInstallApp } from "../common";
-import { useWindowScroll } from "@mantine/hooks";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
+import { ButtonInstallApp } from "../common";
+import { outfit } from "@/global/styles/fonts";
+import { useWindowScroll } from "@mantine/hooks";
+import { viewQuoteRoute } from "@/global/constants";
+import { Button, Group, ThemeIcon } from "@mantine/core";
 
 const group = `bg-white w-full max-w-3xl fixed top-0 z-100 border-b-[3px]`;
 
 export function Header() {
+  const router = useRouter();
   const [scroll] = useWindowScroll();
+
+  const handleClick = () => router.push(viewQuoteRoute(1));
+
+  const button = clsx(outfit.className, "antialiased");
 
   return (
     <Group
@@ -15,7 +23,13 @@ export function Header() {
       p="xs"
       className={clsx(group, scroll.y > 0 ? "border-gray-200" : "border-white")}
       justify="space-between">
-      <ThemeIcon bg="#333" size="lg" radius="xl" />
+      <Group gap={8} onClick={handleClick}>
+        <ThemeIcon bg="#333" size="lg" radius="xl" />
+
+        <Button p={0} fz="xl" c="#333" className={button} variant="transparent">
+          Quotehouse
+        </Button>
+      </Group>
 
       <ButtonInstallApp />
     </Group>

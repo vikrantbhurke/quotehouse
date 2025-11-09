@@ -8,5 +8,5 @@ export const getZen = (isZen: boolean) =>
 export const fadePseudo = "transition-opacity duration-300 ease-in-out";
 
 export const opacity =
-  "opacity-100 hover:opacity-80 focus:opacity-80 active:opacity-80" +
+  "opacity-100 hover:opacity-100 focus:opacity-100 active:opacity-100" +
   fadePseudo;

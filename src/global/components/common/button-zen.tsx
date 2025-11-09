@@ -1,16 +1,14 @@
 "use client";
-import clsx from "clsx";
-import { opacity } from "@/app/tailwind";
 import { ActionIcon } from "@mantine/core";
 import { RootState } from "@/global/states/store";
 import { IconPointFilled } from "@tabler/icons-react";
 import { useDispatch, useSelector } from "react-redux";
-import classes from "@/global/styles/common.module.css";
 import { setIsZen } from "@/global/states/global-slice";
+import { boxShadow } from "@/global/styles/styles";
 
-export function ButtonZen() {
+export function ButtonZen({ color }: any) {
   const dispatch = useDispatch();
-  const { color, isZen } = useSelector((state: RootState) => state.global);
+  const { isZen } = useSelector((state: RootState) => state.global);
 
   const zenOn = () => dispatch(setIsZen(true));
   const zenOff = () => dispatch(setIsZen(false));
@@ -19,10 +17,10 @@ export function ButtonZen() {
     <ActionIcon
       size="lg"
       radius="xl"
+      style={isZen ? {} : boxShadow(color)}
       onClick={isZen ? zenOff : zenOn}
-      variant={isZen ? "transparent" : "white"}
-      className={clsx(!isZen && classes.boxShadow, opacity)}>
-      <IconPointFilled size={30} color={isZen ? "white" : color} stroke={3} />
+      variant={isZen ? "transparent" : "white"}>
+      <IconPointFilled size={25} stroke={3} color={isZen ? "white" : color} />
     </ActionIcon>
   );
 }

@@ -1,17 +1,14 @@
 "use client";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
 import { Box, lighten } from "@mantine/core";
-import { RootState } from "@/global/states/store";
 
-export function OuterShell({ children }: any) {
-  const { color } = useSelector((state: RootState) => state.global);
+export function OuterShell({ children, color }: any) {
   const colorLight = lighten(color, 0.2);
 
   const outer = "flex flex-col items-center";
 
   const gradient =
-    "bg-[linear-gradient(to_bottom,var(--color)_0%,var(--color-light)_33%,var(--color-light)_67%,var(--color)_100%)]";
+    "bg-[radial-gradient(circle,var(--color-light),var(--color))]";
 
   const variables = {
     "--color": color,

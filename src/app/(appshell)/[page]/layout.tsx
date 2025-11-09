@@ -1,23 +1,7 @@
-import { readQuote } from "@/features/quote/actions";
-import { InnerShell, OuterShell } from "@/global/components/layout";
-
 type LayoutProps = {
   children: React.ReactNode;
-  params: Promise<{ [key: string]: string }>;
 };
 
-export default async function Layout({ children, params }: LayoutProps) {
-  const { page } = await params;
-  const quotesPage = await readQuote({ page: Number(page) - 1 });
-
-  return (
-    <OuterShell>
-      <InnerShell
-        page={page}
-        quote={quotesPage.content[0]}
-        total={quotesPage.totalElements}>
-        {children}
-      </InnerShell>
-    </OuterShell>
-  );
+export default async function Layout({ children }: LayoutProps) {
+  return children;
 }
