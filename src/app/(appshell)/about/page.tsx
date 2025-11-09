@@ -6,7 +6,7 @@ import {
   Textarea,
   Button,
   TextInput,
-  Select,
+  Divider,
   TimelineItem,
   Timeline,
   Space,
@@ -20,29 +20,34 @@ export default function Page() {
     <Stack gap={60} p="xl">
       <Stack>
         <Title ta="center" order={1} c="#333" fw={900} className={text}>
-          Hello World
+          About
         </Title>
 
         <Text c="#333" fz={20} fw={400} className={text}>
-          I&apos;m Vikrant. Addicted to doom scroll some app everyday just like
-          you are. The content I consume on those apps is mostly mental junk
-          food. It&apos;s tasty, cheap and even safe in small dosage. But
-          it&apos;s unhealthy and unnecessary. I also but less frequently read
-          books, watch tutorials and listen to podcasts. That&apos;s a lot
-          healthier diet. Protein, complex carbs, fibre. I made this app to
-          replace some of the former with the later. Fries with fruits. Nachos
-          with nuts. Biscuits with berries. I know there exist alternate
-          websites who have more quotes, have more ways to filter and search
-          them and add more quotes faster in their database. I&apos;m not
-          competing with them. I&apos;m simply built a site / app where I can
-          get my daily fix of insightful thoughts in easy and aesthetically
-          pleasing way. Something I couldn&apos;t find on the internet until I
-          made this app. I am also manually and continually growing the quotes
-          database. You&apos;re welcome to help me do that. You can submit
-          quotes you think should be on this app with the form below. I read,
-          verify and add qualified quotes to the database.
+          Hello world! I&apos;m Vikrant. Like you, I doom scroll through apps
+          every day. Most of what I see is mental junk food; tasty, cheap, and
+          harmless in small doses, but unhealthy over time. Sometimes I switch
+          to a better diet; books, podcasts, tutorials. That&apos;s the good
+          stuff; protein, vitamins, fiber. I built this app to swap the junk
+          snack for the healthier one. Fries for fruit. Nachos for nuts.
+          Biscuits for berries.
+        </Text>
+
+        <Text c="#333" fz={20} fw={400} className={text}>
+          There are other quote sites out there. They have more quotes, more
+          filters, more speed. I&apos;m not competing with them. I&apos;m
+          building a space where insight meets design; a place to get my daily
+          fix of meaningful thoughts in a calm, beautiful way. The database is
+          growing by hand, one quote at a time. You can help. Submit quotes you
+          think belong here. I read, verify, and add the best ones.
+        </Text>
+
+        <Text c="#333" fz={20} fw={400} className={text}>
+          You’re welcome.
         </Text>
       </Stack>
+
+      <Divider size="md" />
 
       <Stack>
         <Title ta="center" order={1} c="#333" fw={900} className={text}>
@@ -54,10 +59,10 @@ export default function Page() {
           size="xl"
           label={
             <Text c="#333" fz={24} fw={600} className={text}>
-              Message
+              Quote
             </Text>
           }
-          placeholder="Input placeholder"
+          placeholder="Some awesome quote"
           autosize
           minRows={2}
           maxRows={4}
@@ -82,7 +87,7 @@ export default function Page() {
               Author
             </Text>
           }
-          placeholder="Say something"
+          placeholder="Author's name"
           styles={{ input: { border: "3px solid #EEE" } }}
           c="#333"
           fw={600}
@@ -92,7 +97,7 @@ export default function Page() {
           className={text}
         />
 
-        <Select
+        {/* <Select
           radius="lg"
           size="xl"
           c="#333"
@@ -123,7 +128,7 @@ export default function Page() {
             "Ask a question",
             "Request a feature",
           ]}
-        />
+        /> */}
 
         <Space />
 
@@ -133,6 +138,8 @@ export default function Page() {
           </Text>
         </Button>
       </Stack>
+
+      <Divider size="md" />
 
       <QuotesTimeline />
     </Stack>
@@ -148,7 +155,7 @@ export function QuotesTimeline() {
 
       <Timeline
         active={1}
-        color="violet"
+        color="gray"
         bulletSize={50}
         lineWidth={10}
         className={text}>
@@ -164,7 +171,7 @@ export function QuotesTimeline() {
             </Text>
           }>
           <Text c="#888" size="md" fw={600} className={text}>
-            Quotehouse website lauched with 1000 quotes
+            Quotehouse website lauched with 1000 quotes.
           </Text>
           <Text c="#bbb" size="md" mt={4} fw={600}>
             10th November, 2025
