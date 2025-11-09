@@ -2,6 +2,12 @@
   box-shadow: 1px 1px 3px #555;
 }
 
+@media screen and (max-width: 768px) {
+  .boxShadow {
+    box-shadow: 1px 1px 3px #888;
+  }
+}
+
 .textShadow {
   text-shadow: 1px 1px 3px #555;
 }

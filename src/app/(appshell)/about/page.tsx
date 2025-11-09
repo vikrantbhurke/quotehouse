@@ -62,7 +62,7 @@ export default function Page() {
               Quote
             </Text>
           }
-          placeholder="Some awesome quote"
+          placeholder="An awesome quote"
           autosize
           minRows={2}
           maxRows={4}
@@ -173,7 +173,7 @@ export function QuotesTimeline() {
           <Text c="#888" size="md" fw={600} className={text}>
             Quotehouse website lauched with 1000 quotes.
           </Text>
-          <Text c="#bbb" size="md" mt={4} fw={600}>
+          <Text c="#bbb" size="sm" mt={4} fw={600}>
             10th November, 2025
           </Text>
         </TimelineItem>
@@ -193,7 +193,7 @@ export function QuotesTimeline() {
             Quotehouse hit 10000 quotes in its datebase. Thanks to the global
             community.
           </Text>
-          <Text c="#bbb" size="md" mt={4} fw={600}>
+          <Text c="#bbb" size="sm" mt={4} fw={600}>
             1st January, 2026
           </Text>
         </TimelineItem>
@@ -206,13 +206,13 @@ export function QuotesTimeline() {
           }
           title={
             <Text c="#333" fz={24} fw={600} className={text}>
-              Day ???
+              Who knows ???
             </Text>
           }>
           <Text c="#888" size="md" fw={600} className={text}>
             Help us reach this milestone sooner.
           </Text>
-          <Text c="#bbb" size="md" mt={4} fw={600}>
+          <Text c="#bbb" size="sm" mt={4} fw={600}>
             31st June, 2026
           </Text>
         </TimelineItem>
