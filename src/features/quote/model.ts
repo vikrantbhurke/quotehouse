@@ -6,7 +6,6 @@ const QuoteSchema = new Schema(
     author: { type: String, required: true },
     isDraft: { type: Boolean, default: false },
     isDeleted: { type: Boolean, default: false },
-    views: { type: Number, default: 0 },
   },
   {
     timestamps: true,
