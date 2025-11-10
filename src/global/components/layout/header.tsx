@@ -24,19 +24,25 @@ export function Header() {
       className={clsx(group, scroll.y > 0 ? "border-gray-200" : "border-white")}
       justify="space-between">
       <Group gap={8} onClick={handleClick}>
-        <ThemeIcon bg="#333" size="lg" radius="xl" />
+        <ThemeIcon bg="var(--tx-one)" size="lg" radius="xl" />
 
-        <Button p={0} fz="xl" c="#333" className={button} variant="transparent">
+        <Button
+          p={0}
+          fz="xl"
+          c="var(--tx-one)"
+          className={button}
+          variant="transparent">
           Quotehouse
         </Button>
       </Group>
 
       <Group>
         <ButtonInstallApp />
+
         <Title
-          order={4}
           fw={500}
-          c="#333"
+          order={4}
+          c="var(--tx-one)"
           className={clsx(button)}
           onClick={handleClick}>
           Home

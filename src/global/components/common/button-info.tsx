@@ -18,36 +18,36 @@ export function ButtonInfo({ color }: any) {
       <Popover width={200} position="bottom" shadow="md">
         <Popover.Target>
           <ThemeIcon
-            variant="white"
             size="lg"
             radius="xl"
+            variant="white"
             style={boxShadow(color)}>
             <IconInfoCircle size={16} color={color} stroke={3} />
           </ThemeIcon>
         </Popover.Target>
 
-        <Popover.Dropdown bg="white" bd="none" miw={380}>
+        <Popover.Dropdown bg="white" bd="none" miw={350}>
           <Stack gap={0}>
-            <Title order={6} c="#999" fw={500} className={title}>
-              You can go to next or previous page by
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              Ways to go to next or previous page
             </Title>
 
-            <Title order={6} c="#999" fw={500} className={title}>
-              1. Clicking arrow buttons on screen bottom left & right.
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              1. Click arrow buttons on screen bottom left & right.
             </Title>
 
-            <Title order={6} c="#999" fw={500} className={title}>
-              2. Pressing keyboard left & right buttons on desktop.
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              2. Press keyboard left & right buttons on desktop.
             </Title>
 
-            <Title order={6} c="#999" fw={500} className={title}>
-              3. Swiping left & right on touch device.
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              3. Swipe left & right on touch device.
             </Title>
 
-            <Title order={6} c="#999" fw={500} className={title}>
-              4. Typing page number in url in browser search bar.
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              4. Type page number in url in browser search bar.
             </Title>
-          </Stack>{" "}
+          </Stack>
         </Popover.Dropdown>
       </Popover>
     </Box>

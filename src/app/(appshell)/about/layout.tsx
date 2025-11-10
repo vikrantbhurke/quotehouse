@@ -9,9 +9,7 @@ export default async function Layout({ children }: LayoutProps) {
   return (
     <App>
       <Header />
-
       <Space className="h-[60px]" />
-
       {children}
     </App>
   );

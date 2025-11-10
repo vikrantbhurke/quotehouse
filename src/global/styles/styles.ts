@@ -1,7 +1,7 @@
 import { darken } from "@mantine/core";
 
 export const boxShadow = (color: string) => ({
-  boxShadow: `1px 1px 3px ${darken(color, 0.5)}`,
+  boxShadow: `2px 2px 3px ${darken(color, 0.3)}`,
 });
 
 export const textShadow = (color: string) => ({

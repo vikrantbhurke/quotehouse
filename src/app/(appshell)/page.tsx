@@ -1,5 +1,6 @@
+import { viewQuoteRoute } from "@/global/constants";
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  redirect("/1");
+  redirect(viewQuoteRoute(1));
 }

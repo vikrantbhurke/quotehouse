@@ -8,7 +8,7 @@ export function OuterShell({ children, color }: any) {
   const outer = "flex flex-col items-center";
 
   const gradient =
-    "bg-[radial-gradient(circle,var(--color-light),var(--color))]";
+    "bg-[radial-gradient(circle,var(--color-light),var(--color)_100%)]";
 
   const variables = {
     "--color": color,

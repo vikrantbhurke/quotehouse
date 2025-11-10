@@ -16,9 +16,9 @@ export function ButtonShuffle({ total, color }: any) {
   return (
     <Box className={getZen(isZen)}>
       <ActionIcon
-        variant="white"
         size="lg"
         radius="xl"
+        variant="white"
         onClick={handleShuffle}
         style={boxShadow(color)}>
         <IconArrowsShuffle size={16} color={color} stroke={3} />

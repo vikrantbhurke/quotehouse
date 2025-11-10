@@ -16,9 +16,9 @@ export function ButtonPrevious({ total, color }: any) {
   return (
     <Box className={getZen(isZen)}>
       <ActionIcon
-        variant="white"
         size="lg"
         radius="xl"
+        variant="white"
         onClick={handlePrevious}
         style={boxShadow(color)}>
         <IconArrowLeft size={16} color={color} stroke={3} />

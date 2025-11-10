@@ -18,9 +18,9 @@ export function ButtonCopy({ jsonQuote, color }: any) {
   return (
     <Box className={getZen(isZen)}>
       <ActionIcon
-        variant="white"
         size="lg"
         radius="xl"
+        variant="white"
         onClick={handleClick}
         style={boxShadow(color)}
         color={clipboard.copied ? "teal" : "blue"}>

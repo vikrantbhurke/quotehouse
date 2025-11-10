@@ -20,9 +20,9 @@ export function ButtonLogo({ color }: any) {
   return (
     <Group gap={8} onClick={handleClick}>
       <ThemeIcon
-        variant="white"
         size="lg"
         radius="xl"
+        variant="white"
         style={boxShadow(color)}
         className={getZen(isZen)}
       />

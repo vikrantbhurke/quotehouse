@@ -16,9 +16,9 @@ export function ButtonNext({ total, color }: any) {
   return (
     <Box className={getZen(isZen)}>
       <ActionIcon
-        variant="white"
         size="lg"
         radius="xl"
+        variant="white"
         onClick={handleNext}
         style={boxShadow(color)}>
         <IconArrowRight size={16} color={color} stroke={3} />

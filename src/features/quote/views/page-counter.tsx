@@ -14,7 +14,7 @@ export function PageCounter({ page, total, color }: any) {
 
   return (
     <Box className={getZen(isZen)}>
-      <Text c="white" fw={700} className={text} style={textShadow(color)}>
+      <Text c="white" size="sm" className={text} style={textShadow(color)}>
         {page} / {total}
       </Text>
     </Box>
