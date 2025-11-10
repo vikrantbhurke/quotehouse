@@ -164,7 +164,7 @@ export function FormCiteQuote() {
         <Button
           type="submit"
           variant="filled"
-          radius="lg"
+          radius="xl"
           size="xl"
           color="var(--tx-one)">
           <Text c="white" fz={24} fw={600}>

@@ -8,7 +8,11 @@ import {
   ButtonAbout,
 } from "@/global/components/common";
 import { Box, Group } from "@mantine/core";
-import { ButtonCopy, PageCounter } from "@/features/quote/views";
+import {
+  ButtonCopy,
+  ButtonDownload,
+  PageCounter,
+} from "@/features/quote/views";
 
 const inner = `w-full min-h-screen max-w-3xl`;
 const footer = `fixed bottom-0 z-100 h-[50px] w-full max-w-3xl`;
@@ -32,6 +36,7 @@ export function InnerShell({ children, color, quote, page, total }: any) {
           <ButtonPrevious total={total} color={color} />
 
           <Group>
+            <ButtonDownload color={color} />
             <ButtonCopy jsonQuote={JSON.stringify(quote)} color={color} />
             <ButtonZen color={color} />
             <ButtonShuffle total={total} color={color} />

@@ -25,6 +25,11 @@ export function useNavigate(total: number) {
   const nextUrl = page < total ? getHref(page + 1) : null;
   const previousUrl = page > 1 ? getHref(page - 1) : null;
 
+  const input = (page: number) => {
+    const url = getHref(page);
+    router.push(url);
+  };
+
   const increment = useCallback(() => {
     if (nextUrl) router.push(nextUrl);
   }, [nextUrl, router]);
@@ -76,5 +81,5 @@ export function useNavigate(total: number) {
     };
   }, [dispatch, increment, decrement]);
 
-  return { increment, decrement, shuffle, page };
+  return { input, increment, decrement, shuffle, page };
 }
