@@ -41,7 +41,7 @@ export function PageCounter({ page, total, color }: any) {
             color: "white",
             textAlign: "center",
             background: "transparent",
-            border: `1px solid ${color || "#fff"}`,
+            border: `none`,
             ...textShadow(color),
           },
         }}

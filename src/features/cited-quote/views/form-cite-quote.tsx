@@ -90,12 +90,12 @@ export function FormCiteQuote() {
 
         <Textarea
           label={
-            <Text fz={24} fw={600}>
+            <Text fz={20} fw={600}>
               Quote
             </Text>
           }
           fw={500}
-          size="xl"
+          size="lg"
           autosize
           radius="lg"
           minRows={2}
@@ -110,12 +110,12 @@ export function FormCiteQuote() {
 
         <TextInput
           label={
-            <Text fz={24} fw={600}>
+            <Text fz={20} fw={600}>
               Author
             </Text>
           }
           fw={500}
-          size="xl"
+          size="lg"
           radius="lg"
           className={text}
           styles={{ input: border }}
@@ -127,12 +127,12 @@ export function FormCiteQuote() {
 
         <TextInput
           label={
-            <Text fz={24} fw={600}>
+            <Text fz={20} fw={600}>
               Email
             </Text>
           }
           fw={500}
-          size="xl"
+          size="lg"
           radius="lg"
           className={text}
           styles={{ input: border }}
@@ -144,19 +144,19 @@ export function FormCiteQuote() {
 
         <TextInput
           label={
-            <Text fz={24} fw={600}>
+            <Text fz={20} fw={600}>
               Citation
             </Text>
           }
           fw={500}
-          size="xl"
+          size="lg"
           radius="lg"
           className={text}
           styles={{ input: border }}
           classNames={{ input: text }}
           key={form.key("citation")}
           {...form.getInputProps("citation")}
-          placeholder="Source link or notes where you found the quote"
+          placeholder="Source link, video timestamp, book page..."
         />
 
         <Space />
