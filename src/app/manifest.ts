@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "House full of quotes.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#000000",
+    background_color: "#000",
+    theme_color: "#000",
     icons: [
       {
         src: "/pwa-64x64.png",

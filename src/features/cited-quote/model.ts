@@ -5,7 +5,7 @@ const CitedQuoteSchema = new Schema(
     content: { type: String, required: true },
     author: { type: String, required: true },
     email: { type: String, required: true },
-    citation: { type: String, required: true },
+    citation: { type: String },
   },
   {
     timestamps: true,

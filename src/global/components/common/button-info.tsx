@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import { outfit } from "@/global/styles/fonts";
 import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
+import { boxShadow } from "@/global/styles/styles";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { Box, Popover, Stack, ThemeIcon, Title } from "@mantine/core";
-import { boxShadow } from "@/global/styles/styles";
 
 const title = clsx(outfit.className, "antialiased");
 
