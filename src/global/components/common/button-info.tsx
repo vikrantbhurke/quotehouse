@@ -45,7 +45,11 @@ export function ButtonInfo({ color }: any) {
             </Title>
 
             <Title order={6} c="var(--tx-one)" fw={500} className={title}>
-              4. Type page number in url in browser search bar.
+              4. Type page number in page count input on screen top center.
+            </Title>
+
+            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+              5. Type page number in url in browser search bar.
             </Title>
           </Stack>
         </Popover.Dropdown>
