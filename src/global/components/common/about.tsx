@@ -16,18 +16,18 @@ export function About() {
         every day. Most of what I see is mental junk food; tasty, cheap, and
         harmless in small doses, but unhealthy over time. Sometimes I switch to
         a better diet; books, podcasts, tutorials. That&apos;s the good stuff;
-        protein, vitamins, fiber. I built this app to swap the junk snack for
-        the healthier one. Fries for fruit. Nachos for nuts. Biscuits for
-        berries.
+        protein, vitamins, fiber. I&apos;m building Quotehouse to swap some of
+        the junk food for the healthier one. Fries for fruit. Nachos for nuts.
+        Biscuits for berries.
       </Text>
 
       <Text fz={20}>
         There are other quote sites out there. They have more quotes, more
         filters, more speed. I&apos;m not competing with them. I&apos;m building
-        a space where insight meets design; a place to get my daily fix of
-        meaningful thoughts in a calm, beautiful way. The database is growing by
-        hand, one quote at a time. You can help. Submit quotes you think belong
-        here. I read, verify, and add the best ones.
+        this app as a hobby project to get my daily fix of insightful thoughts
+        in an easy and fun way. I hope you get it as well. The database is
+        growing by hand, one quote at a time. You can help me grow it. Submit
+        quotes you think belong here. I read, verify, and add the best ones.
       </Text>
 
       <Text fz={20}>You&apos;re welcome.</Text>
