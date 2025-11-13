@@ -7,11 +7,7 @@ import { Box, NumberInput } from "@mantine/core";
 import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 
-export function PageCounter({
-  page,
-  total,
-}: // color
-any) {
+export function PageCounter({ page, total }: any) {
   const { isZen } = useSelector((state: RootState) => state.global);
   const { input } = useNavigate(total);
 
