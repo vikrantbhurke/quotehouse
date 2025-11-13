@@ -6,9 +6,12 @@ import { outfit } from "@/global/styles/fonts";
 import { Box, NumberInput } from "@mantine/core";
 import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
-import { textShadow } from "@/global/styles/styles";
 
-export function PageCounter({ page, total, color }: any) {
+export function PageCounter({
+  page,
+  total,
+}: // color
+any) {
   const { isZen } = useSelector((state: RootState) => state.global);
   const { input } = useNavigate(total);
 
@@ -42,7 +45,6 @@ export function PageCounter({ page, total, color }: any) {
             textAlign: "center",
             background: "transparent",
             border: `none`,
-            ...textShadow(color),
           },
         }}
       />

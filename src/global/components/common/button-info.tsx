@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { outfit } from "@/global/styles/fonts";
 import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
-import { boxShadow } from "@/global/styles/styles";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { Box, Popover, Stack, ThemeIcon, Title } from "@mantine/core";
 
@@ -17,11 +16,7 @@ export function ButtonInfo({ color }: any) {
     <Box className={getZen(isZen)}>
       <Popover width={200} position="bottom" shadow="md">
         <Popover.Target>
-          <ThemeIcon
-            size="lg"
-            radius="xl"
-            variant="white"
-            style={boxShadow(color)}>
+          <ThemeIcon size="lg" radius="xl" variant="white">
             <IconInfoCircle size={16} color={color} stroke={3} />
           </ThemeIcon>
         </Popover.Target>

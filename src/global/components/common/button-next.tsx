@@ -5,7 +5,6 @@ import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useNavigate } from "@/global/hooks/use-navigate";
-import { boxShadow } from "@/global/styles/styles";
 
 export function ButtonNext({ total, color }: any) {
   const { increment } = useNavigate(total);
@@ -15,12 +14,7 @@ export function ButtonNext({ total, color }: any) {
 
   return (
     <Box className={getZen(isZen)}>
-      <ActionIcon
-        size="lg"
-        radius="xl"
-        variant="white"
-        onClick={handleNext}
-        style={boxShadow(color)}>
+      <ActionIcon size="lg" radius="xl" variant="white" onClick={handleNext}>
         <IconArrowRight size={16} color={color} stroke={3} />
       </ActionIcon>
     </Box>

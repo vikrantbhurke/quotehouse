@@ -1,5 +1,4 @@
 "use client";
-import { boxShadow } from "@/global/styles/styles";
 import { ActionIcon, Box } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconDownload } from "@tabler/icons-react";
@@ -16,12 +15,7 @@ export function ButtonDownload({ color }: any) {
     <Box className={getZen(isZen)}>
       <ModalDownload opened={opened} close={close} />
 
-      <ActionIcon
-        size="lg"
-        radius="xl"
-        variant="white"
-        onClick={open}
-        style={boxShadow(color)}>
+      <ActionIcon size="lg" radius="xl" variant="white" onClick={open}>
         <IconDownload size={16} color={color} stroke={3} />
       </ActionIcon>
     </Box>

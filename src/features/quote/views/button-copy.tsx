@@ -5,7 +5,6 @@ import { IconCopy } from "@tabler/icons-react";
 import { ActionIcon, Box } from "@mantine/core";
 import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
-import { boxShadow } from "@/global/styles/styles";
 
 export function ButtonCopy({ jsonQuote, color }: any) {
   const quote = JSON.parse(jsonQuote);
@@ -22,7 +21,6 @@ export function ButtonCopy({ jsonQuote, color }: any) {
         radius="xl"
         variant="white"
         onClick={handleClick}
-        style={boxShadow(color)}
         color={clipboard.copied ? "teal" : "blue"}>
         <IconCopy size={16} color={color} stroke={3} />
       </ActionIcon>

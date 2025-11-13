@@ -7,9 +7,8 @@ import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 import { viewQuoteRoute } from "@/global/constants";
 import { Box, Group, ThemeIcon, Title } from "@mantine/core";
-import { boxShadow, textShadow } from "@/global/styles/styles";
 
-export function ButtonLogo({ color }: any) {
+export function ButtonLogo() {
   const router = useRouter();
   const { isZen } = useSelector((state: RootState) => state.global);
 
@@ -24,7 +23,6 @@ export function ButtonLogo({ color }: any) {
           size={33}
           radius="xl"
           variant="white"
-          style={boxShadow(color)}
           className={clsx(getZen(isZen), "absolute top-0 left-0")}
         />
 
@@ -33,7 +31,6 @@ export function ButtonLogo({ color }: any) {
           radius="xl"
           variant="white"
           style={{
-            ...boxShadow(color),
             position: "absolute",
             bottom: "-5px",
             right: "-5px",
@@ -42,7 +39,7 @@ export function ButtonLogo({ color }: any) {
         />
       </Box>
 
-      <Title c="white" size="xl" className={text} style={textShadow(color)}>
+      <Title c="white" size="xl" className={text}>
         Quotehouse
       </Title>
     </Group>

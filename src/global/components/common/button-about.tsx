@@ -2,7 +2,6 @@
 import { aboutRoute } from "@/global/constants";
 import { RootState } from "@/global/states/store";
 import { outfit } from "@/global/styles/fonts";
-import { boxShadow } from "@/global/styles/styles";
 import { getZen } from "@/global/styles/tailwind";
 import { Button } from "@mantine/core";
 import clsx from "clsx";
@@ -20,7 +19,6 @@ export function ButtonAbout({ color }: any) {
       radius="xl"
       variant="white"
       className={clsx(getZen(isZen), text)}
-      style={boxShadow(color)}
       component={Link}
       href={aboutRoute}>
       About

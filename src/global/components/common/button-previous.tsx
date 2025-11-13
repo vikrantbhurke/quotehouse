@@ -5,7 +5,6 @@ import { getZen } from "@/global/styles/tailwind";
 import { RootState } from "@/global/states/store";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { useNavigate } from "@/global/hooks/use-navigate";
-import { boxShadow } from "@/global/styles/styles";
 
 export function ButtonPrevious({ total, color }: any) {
   const { decrement } = useNavigate(total);
@@ -19,8 +18,7 @@ export function ButtonPrevious({ total, color }: any) {
         size="lg"
         radius="xl"
         variant="white"
-        onClick={handlePrevious}
-        style={boxShadow(color)}>
+        onClick={handlePrevious}>
         <IconArrowLeft size={16} color={color} stroke={3} />
       </ActionIcon>
     </Box>

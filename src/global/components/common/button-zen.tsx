@@ -4,7 +4,6 @@ import { RootState } from "@/global/states/store";
 import { IconPointFilled } from "@tabler/icons-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsZen } from "@/global/states/global-slice";
-import { boxShadow } from "@/global/styles/styles";
 
 export function ButtonZen({ color }: any) {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ export function ButtonZen({ color }: any) {
     <ActionIcon
       size="lg"
       radius="xl"
-      style={isZen ? {} : boxShadow(color)}
       onClick={isZen ? zenOff : zenOn}
       variant={isZen ? "transparent" : "white"}>
       <IconPointFilled size={25} stroke={3} color={isZen ? "white" : color} />

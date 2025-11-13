@@ -20,7 +20,7 @@ export function Header() {
   return (
     <Group
       h={60}
-      p="xs"
+      px="xs"
       className={clsx(group, scroll.y > 0 ? "border-gray-200" : "border-white")}
       justify="space-between">
       <Group gap={8} onClick={handleClick}>
