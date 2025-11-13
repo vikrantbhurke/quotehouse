@@ -14,7 +14,11 @@ export function AppTimeline() {
         Timeline
       </Title>
 
-      <Timeline active={0} color="var(--tx-one)" bulletSize={50} lineWidth={10}>
+      <Timeline
+        active={0}
+        color="var(--mantine-color-dark-6)"
+        bulletSize={50}
+        lineWidth={10}>
         <TimelineItem
           bullet={
             <Title order={5} c="white" className={text}>
@@ -26,10 +30,14 @@ export function AppTimeline() {
               Day 0: Launch
             </Text>
           }>
-          <Text c="var(--tx-two)" size="md" className={fw600}>
+          <Text c="var(--mantine-color-gray-6)" size="md" className={fw600}>
             Quotehouse website lauched with 1000 quotes.
           </Text>
-          <Text c="var(--tx-three)" size="sm" mt={4} className={fw600}>
+          <Text
+            c="var(--mantine-color-gray-4)"
+            size="sm"
+            mt={4}
+            className={fw600}>
             10th November, 2025
           </Text>
         </TimelineItem>
@@ -45,17 +53,17 @@ export function AppTimeline() {
               Someday
             </Text>
           }>
-          <Text c="var(--tx-two)" size="md" className={fw600}>
+          <Text c="var(--mantine-color-gray-6)" size="md" className={fw600}>
             Submit quotes and help {process.env.NEXT_PUBLIC_APP_NAME} reach this
             milestone.
           </Text>
 
-          {/* <Text c="var(--tx-two)" size="md" className={fw600}>
+          {/* <Text c="var(--mantine-color-gray-6)" size="md" className={fw600}>
             Quotehouse hit 10000 quotes in its datebase. Thanks to the global
             community.
           </Text> */}
 
-          {/* <Text c="var(--tx-three)" size="sm" mt={4} className={fw600}>
+          {/* <Text c="var(--mantine-color-gray-4)" size="sm" mt={4} className={fw600}>
             1st January, 2026
           </Text> */}
         </TimelineItem>

@@ -18,7 +18,9 @@ const text = clsx(outfit.className, "antialiased");
 const taCenter = "text-center";
 const h1 = clsx(taCenter, text);
 
-const border = { border: "3px solid var(--tx-four)" };
+const border = {
+  border: "3px solid var(--mantine-color-gray-3)",
+};
 
 export function FormCiteQuote() {
   const form = useForm({
@@ -55,10 +57,13 @@ export function FormCiteQuote() {
       notifications.show({
         message,
         radius: "xl",
-        color: "#05df72",
+        color: "var(--mantine-color-green-7)",
         withCloseButton: false,
         position: "bottom-center",
-        style: { backgroundColor: "#05df72" },
+        style: {
+          color: "white",
+          backgroundColor: "var(--mantine-color-green-7)",
+        },
       });
     } catch (error: any) {
       console.error(error);
@@ -72,10 +77,13 @@ export function FormCiteQuote() {
       notifications.show({
         message,
         radius: "xl",
-        color: "#ff6467",
+        color: "var(--mantine-color-red-7)",
         withCloseButton: false,
         position: "bottom-center",
-        style: { backgroundColor: "#ff6467" },
+        style: {
+          color: "white",
+          backgroundColor: "var(--mantine-color-red-7)",
+        },
       });
     }
   };
@@ -165,7 +173,7 @@ export function FormCiteQuote() {
           variant="filled"
           radius="xl"
           size="xl"
-          color="var(--tx-one)">
+          color="var(--mantine-color-dark-6)">
           <Text c="white" fz={24} fw={600}>
             Send
           </Text>

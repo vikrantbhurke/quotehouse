@@ -28,14 +28,14 @@ export function Header() {
           <ThemeIcon
             size={33}
             radius="xl"
-            bg="var(--tx-one)"
+            bg="var(--mantine-color-dark-6)"
             className="absolute top-0 left-0"
           />
 
           <ThemeIcon
             size={10}
             radius="xl"
-            bg="var(--tx-one)"
+            bg="var(--mantine-color-dark-6)"
             style={{
               position: "absolute",
               bottom: "-5px",
@@ -47,7 +47,7 @@ export function Header() {
         <Button
           p={0}
           fz="xl"
-          c="var(--tx-one)"
+          c="var(--mantine-color-dark-6)"
           className={button}
           variant="transparent">
           Quotehouse
@@ -60,7 +60,7 @@ export function Header() {
         <Title
           fw={500}
           order={4}
-          c="var(--tx-one)"
+          c="var(--mantine-color-dark-6)"
           className={clsx(button)}
           onClick={handleClick}>
           Home

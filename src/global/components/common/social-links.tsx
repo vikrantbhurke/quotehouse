@@ -23,7 +23,7 @@ export function SocialLinks() {
           size="xl"
           radius="xl"
           component={Link}
-          bg="var(--tx-one)"
+          bg="var(--mantine-color-dark-6)"
           target="_blank"
           href="https://x.com/vikrantbhurke">
           <IconBrandX />
@@ -33,7 +33,7 @@ export function SocialLinks() {
           size="xl"
           radius="xl"
           component={Link}
-          bg="var(--tx-one)"
+          bg="var(--mantine-color-dark-6)"
           target="_blank"
           href="https://www.linkedin.com/in/vikrant-bhurke-16726335a/">
           <IconBrandLinkedin />
@@ -43,7 +43,7 @@ export function SocialLinks() {
           size="xl"
           radius="xl"
           component={Link}
-          bg="var(--tx-one)"
+          bg="var(--mantine-color-dark-6)"
           target="_blank"
           href="https://t.me/vikrantbhurke">
           <IconBrandTelegram />
@@ -53,7 +53,7 @@ export function SocialLinks() {
           size="xl"
           radius="xl"
           component={Link}
-          bg="var(--tx-one)"
+          bg="var(--mantine-color-dark-6)"
           target="_blank"
           href="https://www.instagram.com/vikbhurke11/">
           <IconBrandInstagram />

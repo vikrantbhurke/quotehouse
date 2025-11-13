@@ -33,7 +33,7 @@ export function ModalShare({ author, page, opened, close }: any) {
   const title = `Read this ${author} quote at`;
   const url = `${process.env.NEXT_PUBLIC_APP_URL!}/quote/${page}`;
 
-  const border = { border: "3px solid var(--tx-four)" };
+  const border = { border: "3px solid var(--mantine-color-gray-3)" };
   const text = clsx(outfit.className, "antialiased");
 
   return (
@@ -48,7 +48,9 @@ export function ModalShare({ author, page, opened, close }: any) {
         </Text>
       }
       closeButtonProps={{
-        icon: <IconX size={20} stroke={3} color="var(--tx-three)" />,
+        icon: (
+          <IconX size={20} stroke={3} color="var(--mantine-color-gray-3)" />
+        ),
       }}>
       <Stack gap="lg" px="sm" pb="md">
         <Stack gap={4}>

@@ -16,7 +16,7 @@ import {
 export function ModalDownload({ opened, close }: any) {
   const [value, setValue] = useState<string | null>("React");
 
-  const border = { border: "3px solid var(--tx-four)" };
+  const border = { border: "3px solid var(--mantine-color-gray-3)" };
   const text = clsx(outfit.className, "antialiased");
 
   return (
@@ -30,7 +30,9 @@ export function ModalDownload({ opened, close }: any) {
         </Text>
       }
       closeButtonProps={{
-        icon: <IconX size={20} stroke={3} color="var(--tx-one)" />,
+        icon: (
+          <IconX size={20} stroke={3} color="var(--mantine-color-dark-6)" />
+        ),
       }}>
       <Stack>
         <Select
@@ -108,7 +110,11 @@ export function ModalDownload({ opened, close }: any) {
 
         <Space />
 
-        <Button variant="filled" radius="xl" size="xl" color="var(--tx-one)">
+        <Button
+          variant="filled"
+          radius="xl"
+          size="xl"
+          color="var(--mantine-color-gray-6)">
           <Text c="white" fz={24} fw={600}>
             Download
           </Text>

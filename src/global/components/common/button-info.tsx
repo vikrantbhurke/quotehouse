@@ -23,27 +23,27 @@ export function ButtonInfo({ color }: any) {
 
         <Popover.Dropdown bg="white" bd="none" miw={350}>
           <Stack gap={0}>
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               Ways to go to next or previous page
             </Title>
 
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               1. Click arrow buttons on screen bottom left & right.
             </Title>
 
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               2. Press keyboard left & right buttons on desktop.
             </Title>
 
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               3. Swipe left & right on touch device.
             </Title>
 
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               4. Type page number in page count input on screen top center.
             </Title>
 
-            <Title order={6} c="var(--tx-one)" fw={500} className={title}>
+            <Title order={6} fw={500} className={title}>
               5. Type page number in url in browser search bar.
             </Title>
           </Stack>
