@@ -37,7 +37,6 @@ export function FormCiteQuote() {
       ),
 
       author: isNotEmpty("Author name is required"),
-      citation: isNotEmpty("Citation is required"),
       email: isEmail("Invalid email"),
     },
   });
