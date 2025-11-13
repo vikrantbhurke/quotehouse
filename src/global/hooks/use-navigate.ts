@@ -1,4 +1,5 @@
 "use client";
+import { useDebouncedCallback } from "@mantine/hooks";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
@@ -14,9 +15,9 @@ export function useNavigate(total: number) {
   const page = Number(last);
 
   const getHref = useCallback(
-    (pageNum: number) => {
+    (page: number) => {
       const newSegments = [...segments];
-      newSegments[newSegments.length - 1] = pageNum.toString();
+      newSegments[newSegments.length - 1] = page.toString();
       return newSegments.join("/");
     },
     [segments]
@@ -25,10 +26,10 @@ export function useNavigate(total: number) {
   const nextUrl = page < total ? getHref(page + 1) : null;
   const previousUrl = page > 1 ? getHref(page - 1) : null;
 
-  const input = (page: number) => {
+  const input = useDebouncedCallback((page: number) => {
     const url = getHref(page);
     router.push(url);
-  };
+  }, 1000);
 
   const increment = useCallback(() => {
     if (nextUrl) router.push(nextUrl);
