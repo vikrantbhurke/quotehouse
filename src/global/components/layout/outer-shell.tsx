@@ -1,4 +1,3 @@
-"use client";
 import clsx from "clsx";
 import { Box, lighten } from "@mantine/core";
 

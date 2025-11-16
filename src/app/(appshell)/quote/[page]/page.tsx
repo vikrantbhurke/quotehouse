@@ -1,5 +1,5 @@
-import { readQuote } from "@/features/quote/actions";
 import { ItemQuote } from "@/features/quote/views";
+import { readQuote } from "@/features/quote/actions";
 import { InnerShell, OuterShell } from "@/global/components/layout";
 
 type PageProps = {
@@ -17,10 +17,7 @@ export default async function Page({ params }: PageProps) {
         color={quotesPage.color}
         quote={quotesPage.content[0]}
         total={quotesPage.totalElements}>
-        <ItemQuote
-          jsonQuote={JSON.stringify(quotesPage.content[0])}
-          color={quotesPage.color}
-        />
+        <ItemQuote quote={quotesPage.content[0]} color={quotesPage.color} />
       </InnerShell>
     </OuterShell>
   );

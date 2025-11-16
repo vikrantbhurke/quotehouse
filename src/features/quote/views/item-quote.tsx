@@ -1,12 +1,8 @@
-"use client";
 import clsx from "clsx";
 import { outfit } from "@/global/styles/fonts";
-import { lighten, Space, Stack, Text } from "@mantine/core";
-import { textShadow } from "@/global/styles/styles";
+import { lighten, Space, Stack, Text, darken } from "@mantine/core";
 
-export function ItemQuote({ jsonQuote, color }: any) {
-  const quote = JSON.parse(jsonQuote);
-
+export function ItemQuote({ quote, color }: any) {
   const text = clsx(
     outfit.className,
     "antialiased",
@@ -14,7 +10,7 @@ export function ItemQuote({ jsonQuote, color }: any) {
   );
 
   const style = {
-    ...textShadow(color),
+    textShadow: `2px 2px 2px ${darken(color, 0.2)}`,
     "--selection-bg": lighten(color, 0.5),
   };
 

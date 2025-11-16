@@ -19,8 +19,8 @@ export function InnerShell({ children, color, quote, page, total }: any) {
     <Box className={inner}>
       <Box className={header} h={60}>
         <Group px="md" h="100%" justify="space-between">
-          <ButtonLogo  />
-          <PageCounter page={page} total={total}  />
+          <ButtonLogo />
+          <PageCounter page={page} total={total} />
           <ButtonAbout color={color} />
         </Group>
       </Box>
