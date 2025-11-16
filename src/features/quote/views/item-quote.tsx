@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { outfit } from "@/global/styles/fonts";
-import { lighten, Space, Stack, Text, darken } from "@mantine/core";
+import { lighten, Space, Stack, Text } from "@mantine/core";
 
 export function ItemQuote({ quote, color }: any) {
   const text = clsx(
@@ -10,7 +10,7 @@ export function ItemQuote({ quote, color }: any) {
   );
 
   const style = {
-    textShadow: `2px 2px 2px ${darken(color, 0.2)}`,
+    // textShadow: `2px 2px 2px ${darken(color, 0.2)}`,
     "--selection-bg": lighten(color, 0.5),
   };
 
