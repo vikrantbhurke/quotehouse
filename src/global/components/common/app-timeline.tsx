@@ -34,7 +34,7 @@ export function AppTimeline() {
             Quotehouse website lauched with 1000 quotes.
           </Text>
           <Text
-            c="var(--mantine-color-gray-4)"
+            c="var(--mantine-color-gray-5)"
             size="sm"
             mt={4}
             className={fw600}>

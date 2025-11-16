@@ -2,11 +2,11 @@
 import {
   Text,
   Title,
+  Stack,
   Space,
   Button,
   Textarea,
   TextInput,
-  Stack,
 } from "@mantine/core";
 import clsx from "clsx";
 import { citedQuote } from "../actions";
@@ -18,9 +18,7 @@ const text = clsx(outfit.className, "antialiased");
 const taCenter = "text-center";
 const h1 = clsx(taCenter, text);
 
-const border = {
-  border: "3px solid var(--mantine-color-gray-3)",
-};
+const border = { border: "3px solid var(--mantine-color-gray-3)" };
 
 export function FormCiteQuote() {
   const form = useForm({
@@ -46,45 +44,44 @@ export function FormCiteQuote() {
   const handleSubmit = async (values: any) => {
     try {
       await citedQuote(values);
-      form.reset();
 
       const message = (
         <Text fz={20} ta="center">
-          Message sent successfully.
+          Quote cited successfully
         </Text>
       );
 
       notifications.show({
         message,
         radius: "xl",
-        color: "var(--mantine-color-green-7)",
+        color: "var(--mantine-color-green-5)",
         withCloseButton: false,
         position: "bottom-center",
         style: {
-          color: "white",
-          backgroundColor: "var(--mantine-color-green-7)",
+          border: "2px solid black",
+          backgroundColor: "var(--mantine-color-green-5)",
         },
       });
     } catch (error: any) {
-      console.error(error);
-
       const message = (
         <Text fz={20} ta="center">
-          An error occured. Message not sent.
+          {error?.message ? error.message : "Quote citation failed"}
         </Text>
       );
 
       notifications.show({
         message,
         radius: "xl",
-        color: "var(--mantine-color-red-7)",
+        color: "var(--mantine-color-red-5)",
         withCloseButton: false,
         position: "bottom-center",
         style: {
-          color: "white",
-          backgroundColor: "var(--mantine-color-red-7)",
+          border: "2px solid black",
+          backgroundColor: "var(--mantine-color-red-5)",
         },
       });
+    } finally {
+      form.reset();
     }
   };
 
@@ -92,7 +89,7 @@ export function FormCiteQuote() {
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack>
         <Title order={1} className={h1}>
-          Contact
+          Cite A Quote
         </Title>
 
         <Textarea

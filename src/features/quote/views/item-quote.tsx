@@ -13,7 +13,10 @@ export function ItemQuote({ jsonQuote, color }: any) {
     "selection:bg-[var(--selection-bg)]"
   );
 
-  const style = { ...textShadow(color), "--selection-bg": lighten(color, 0.5) };
+  const style = {
+    ...textShadow(color),
+    "--selection-bg": lighten(color, 0.5),
+  };
 
   return (
     <Stack p="xl" h="100vh" justify="space-between" align="center">
@@ -48,7 +51,7 @@ export function ItemQuote({ jsonQuote, color }: any) {
           fw={600}
           ta="center"
           visibleFrom="sm"
-          style={textShadow(color)}
+          style={style}
           className={text}>
           {quote.content}
         </Text>
