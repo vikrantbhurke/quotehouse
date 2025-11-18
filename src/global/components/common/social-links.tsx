@@ -15,9 +15,16 @@ const title = clsx(outfit.className, "antialiased", "text-center");
 export function SocialLinks() {
   return (
     <Stack>
-      <Title order={5} className={title}>
-        Connect with Vikrant
-      </Title>
+      <Stack gap="xs">
+        <Title order={5} className={title}>
+          Connect with Vikrant
+        </Title>
+
+        <Title order={6} className={title}>
+          Email: bhurkevi@gmail.com
+        </Title>
+      </Stack>
+
       <Group justify="center">
         <ActionIcon
           size="xl"
