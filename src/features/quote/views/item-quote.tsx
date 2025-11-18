@@ -9,10 +9,7 @@ export function ItemQuote({ quote, color }: any) {
     "selection:bg-[var(--selection-bg)]"
   );
 
-  const style = {
-    // textShadow: `2px 2px 2px ${darken(color, 0.2)}`,
-    "--selection-bg": lighten(color, 0.5),
-  };
+  const style = { "--selection-bg": lighten(color, 0.5) };
 
   return (
     <Stack p="xl" h="100vh" justify="space-between" align="center">

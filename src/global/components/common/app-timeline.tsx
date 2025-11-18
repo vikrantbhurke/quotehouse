@@ -16,9 +16,9 @@ export function AppTimeline() {
 
       <Timeline
         active={0}
-        color="var(--mantine-color-dark-6)"
+        lineWidth={10}
         bulletSize={50}
-        lineWidth={10}>
+        color="var(--mantine-color-dark-6)">
         <TimelineItem
           bullet={
             <Title order={5} c="white" className={text}>
@@ -31,14 +31,14 @@ export function AppTimeline() {
             </Text>
           }>
           <Text c="var(--mantine-color-gray-6)" size="md" className={fw600}>
-            Quotehouse website lauched with 1000 quotes.
+            Quotehouse website lauched with 1057 quotes.
           </Text>
           <Text
-            c="var(--mantine-color-gray-5)"
-            size="sm"
             mt={4}
-            className={fw600}>
-            10th November, 2025
+            size="sm"
+            className={fw600}
+            c="var(--mantine-color-gray-5)">
+            18th November, 2025
           </Text>
         </TimelineItem>
 

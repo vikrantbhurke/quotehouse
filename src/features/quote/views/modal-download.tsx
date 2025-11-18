@@ -1,22 +1,21 @@
 "use client";
+import {
+  Text,
+  Title,
+  Modal,
+  Space,
+  Stack,
+  Button,
+  Select,
+} from "@mantine/core";
 import clsx from "clsx";
 import { useState } from "react";
 import { IconX } from "@tabler/icons-react";
 import { outfit } from "@/global/styles/fonts";
-import {
-  Button,
-  Modal,
-  Select,
-  Space,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
 
 export function ModalDownload({ opened, close }: any) {
   const [value, setValue] = useState<string | null>("React");
 
-  const border = { border: "3px solid var(--mantine-color-gray-3)" };
   const text = clsx(outfit.className, "antialiased");
 
   return (
@@ -40,7 +39,6 @@ export function ModalDownload({ opened, close }: any) {
           radius="md"
           className={text}
           classNames={{ input: text }}
-          styles={{ input: border, dropdown: border }}
           label={
             <Title order={5} className={text}>
               Resolution
@@ -65,7 +63,6 @@ export function ModalDownload({ opened, close }: any) {
           radius="md"
           className={text}
           classNames={{ input: text }}
-          styles={{ input: border, dropdown: border }}
           label={
             <Title order={5} className={text}>
               Format
@@ -81,7 +78,6 @@ export function ModalDownload({ opened, close }: any) {
           radius="md"
           className={text}
           classNames={{ input: text }}
-          styles={{ input: border, dropdown: border }}
           label={
             <Title order={5} className={text}>
               Font
@@ -97,7 +93,6 @@ export function ModalDownload({ opened, close }: any) {
           radius="md"
           className={text}
           classNames={{ input: text }}
-          styles={{ input: border, dropdown: border }}
           label={
             <Title order={5} className={text}>
               Color

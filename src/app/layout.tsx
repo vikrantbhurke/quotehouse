@@ -4,8 +4,8 @@ import "./globals.css";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 import { Providers } from "@/global/components/common";
 import { outfit } from "@/global/styles/fonts";
+// import Script from "next/script";
 import clsx from "clsx";
-import Script from "next/script";
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" {...mantineHtmlProps}>
       <head>
         {/* Google Analytics */}
-        <Script
+        {/* <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-20J7PPVFVY`}
           strategy="afterInteractive"
         />
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             gtag('js', new Date());
             gtag('config', 'G-20J7PPVFVY');
           `}
-        </Script>
+        </Script> */}
 
         <ColorSchemeScript />
       </head>

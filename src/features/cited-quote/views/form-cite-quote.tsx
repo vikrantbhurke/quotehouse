@@ -13,12 +13,11 @@ import { citedQuote } from "../actions";
 import { outfit } from "@/global/styles/fonts";
 import { notifications } from "@mantine/notifications";
 import { hasLength, isEmail, isNotEmpty, useForm } from "@mantine/form";
+import { AlterQuoteCitation } from "./alert-quote-citation";
 
 const text = clsx(outfit.className, "antialiased");
 const taCenter = "text-center";
 const h1 = clsx(taCenter, text);
-
-const border = { border: "3px solid var(--mantine-color-gray-3)" };
 
 export function FormCiteQuote() {
   const form = useForm({
@@ -58,7 +57,7 @@ export function FormCiteQuote() {
         withCloseButton: false,
         position: "bottom-center",
         style: {
-          border: "2px solid black",
+          border: "2px solid #111",
           backgroundColor: "var(--mantine-color-green-5)",
         },
       });
@@ -76,7 +75,7 @@ export function FormCiteQuote() {
         withCloseButton: false,
         position: "bottom-center",
         style: {
-          border: "2px solid black",
+          border: "2px solid #111",
           backgroundColor: "var(--mantine-color-red-5)",
         },
       });
@@ -92,6 +91,8 @@ export function FormCiteQuote() {
           Cite A Quote
         </Title>
 
+        <AlterQuoteCitation />
+
         <Textarea
           label={
             <Text fz={20} fw={600}>
@@ -104,9 +105,6 @@ export function FormCiteQuote() {
           radius="lg"
           minRows={2}
           maxRows={4}
-          className={text}
-          styles={{ input: border }}
-          classNames={{ input: text }}
           placeholder={"An awesome quote"}
           key={form.key("content")}
           {...form.getInputProps("content")}
@@ -121,10 +119,7 @@ export function FormCiteQuote() {
           fw={500}
           size="lg"
           radius="lg"
-          className={text}
-          styles={{ input: border }}
           placeholder="Author's name"
-          classNames={{ input: text }}
           key={form.key("author")}
           {...form.getInputProps("author")}
         />
@@ -138,10 +133,7 @@ export function FormCiteQuote() {
           fw={500}
           size="lg"
           radius="lg"
-          className={text}
-          styles={{ input: border }}
           placeholder="Your email ID"
-          classNames={{ input: text }}
           key={form.key("email")}
           {...form.getInputProps("email")}
         />
@@ -155,9 +147,6 @@ export function FormCiteQuote() {
           fw={500}
           size="lg"
           radius="lg"
-          className={text}
-          styles={{ input: border }}
-          classNames={{ input: text }}
           key={form.key("citation")}
           {...form.getInputProps("citation")}
           placeholder="Source link, video timestamp, book page..."
@@ -166,10 +155,10 @@ export function FormCiteQuote() {
         <Space />
 
         <Button
+          size="xl"
+          radius="xl"
           type="submit"
           variant="filled"
-          radius="xl"
-          size="xl"
           color="var(--mantine-color-dark-6)">
           <Text c="white" fz={24} fw={600}>
             Send

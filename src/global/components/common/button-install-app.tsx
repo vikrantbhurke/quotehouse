@@ -16,9 +16,9 @@ export function ButtonInstallApp() {
       <Button
         size="md"
         radius="xl"
-        bg="var(--mantine-color-dark-6)"
         className={text}
         onClick={handleInstallClick}
+        bg="var(--mantine-color-dark-6)"
         leftSection={<IconDownload size={20} color="white" stroke={3} />}>
         Install App
       </Button>

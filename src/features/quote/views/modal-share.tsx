@@ -1,14 +1,13 @@
 "use client";
-import { IconCheck, IconCopy, IconX } from "@tabler/icons-react";
 import {
-  ActionIcon,
-  CopyButton,
+  Text,
   Group,
   Modal,
-  ScrollArea,
   Stack,
-  Text,
   Tooltip,
+  CopyButton,
+  ActionIcon,
+  ScrollArea,
 } from "@mantine/core";
 import {
   BlueskyIcon,
@@ -28,6 +27,7 @@ import {
 } from "react-share";
 import clsx from "clsx";
 import { outfit } from "@/global/styles/fonts";
+import { IconCheck, IconCopy, IconX } from "@tabler/icons-react";
 
 export function ModalShare({ author, page, opened, close }: any) {
   const title = `Read this ${author} quote at`;

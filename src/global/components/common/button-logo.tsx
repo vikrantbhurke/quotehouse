@@ -30,12 +30,12 @@ export function ButtonLogo() {
           size={10}
           radius="xl"
           variant="white"
+          className={getZen(isZen)}
           style={{
             position: "absolute",
             bottom: "-5px",
             right: "-5px",
           }}
-          className={getZen(isZen)}
         />
       </Box>
 

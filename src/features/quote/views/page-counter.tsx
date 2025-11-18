@@ -38,9 +38,9 @@ export function PageCounter({ page, total }: any) {
             padding: 0,
             maxWidth: 100,
             color: "white",
+            border: `none`,
             textAlign: "center",
             background: "transparent",
-            border: `none`,
           },
         }}
       />
