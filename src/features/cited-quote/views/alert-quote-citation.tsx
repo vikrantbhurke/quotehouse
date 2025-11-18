@@ -7,7 +7,7 @@ const text = clsx(outfit.className, "antialiased");
 export function AlterQuoteCitation() {
   return (
     <Stack
-      p="xl"
+      p="lg"
       style={{
         backgroundColor: "var(--mantine-color-yellow-1)",
         borderRadius: 20,
